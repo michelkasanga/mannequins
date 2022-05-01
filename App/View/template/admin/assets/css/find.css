@@ -1,0 +1,13 @@
+#photo{
+    width: 100%;
+    margin-top: 100px;
+}
+#aa{
+    width:30px;
+    height: 30px;
+    border-radius:50%;  
+    padding:7px;  
+}
+.btn{
+    padding:8px;
+}
