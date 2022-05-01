@@ -278,7 +278,7 @@
                       </td>
 
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?php //count($this->Comment->find($new->id));?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?= count( $this->Comment_article->find($articles->id));?></span>
                       </td>
 
                       <td class="align-middle text-center">
