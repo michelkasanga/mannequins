@@ -97,7 +97,7 @@ class AdminController extends Controller
 
     public function AddNotice()
     {
-        $title = 'ajout';
+        $title = 'ajouter une annoce';
         if(!empty($_POST['title']) AND !empty($_POST['content'])):
             if(isset($_POST['title']) AND isset($_POST['content'])):
                 $res = $this->Notice->create([
@@ -108,7 +108,7 @@ class AdminController extends Controller
                 header('Location:?src=roxanne');
             endif;
         endif;
-        $this->render("pages.admin.pages.addNotice",compact($this),"admin/find2");
+        $this->render("pages.admin.pages.addNotice",compact("title"),"admin/find2");
     }
     
     public function AddNews()
@@ -232,6 +232,7 @@ class AdminController extends Controller
 
     public function addCategory_model()
     {
+        $title = "Ajouter une categories ";
         if(!empty($_POST['category'])):
             if(isset($_POST['category'])):
                 
@@ -243,11 +244,12 @@ class AdminController extends Controller
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.addCategory_model",compact($this),"admin/find2");
+        $this->render("pages.admin.pages.addCategory_model",compact("title"),"admin/find2");
     }
 
     public function addManager()
     {
+        $title = 'Ajouter un mannager';
         if(!empty($_POST['name']) AND !empty($_POST['email']) AND !empty($_POST['number_phone']) AND !empty($_POST['sex']) AND !empty($_POST['nationality']) AND !empty($_POST['year_b'])):
             if(isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['number_phone']) AND isset($_POST['sex']) AND isset($_POST['nationality']) AND isset($_POST['year_b'])):
                 
@@ -265,7 +267,7 @@ class AdminController extends Controller
                 header('Location:?src=factory');
             endif;
         endif;
-        $this->render("pages.admin.pages.addManager",compact($this),"admin/find2");
+        $this->render("pages.admin.pages.addManager",compact('title'),"admin/find2");
     }
 
     public function EditAboutCompetence()
@@ -731,6 +733,7 @@ class AdminController extends Controller
     }
     public function addPictureModel()
     {
+        $title = 'Ajouter des photos';
         $find = $this->Model->findModel($_GET['id']);
         $picture1 = $this->File->upload('picture1','../App/Photo/ModelPicture/');
         $picture20 = $this->File->upload('picture2','../App/Photo/ModelPicture/');
@@ -757,10 +760,11 @@ class AdminController extends Controller
                     header('Location:?src=model&id='.$_GET['id']);
                 }
         }
-        $this->render("pages.admin.pages.update.modelPicture",compact($this),"admin/find2");
+        $this->render("pages.admin.pages.update.modelPicture",compact('title'),"admin/find2");
     }
     public function addPictureCompetition()
     {
+        $title = 'Ajouter des photos';
         $find = $this->Competition->findCompetition($_GET['id']);
         $picture1 = $this->File->upload('picture1','../App/Photo/CompetitionPicture/');
         $picture20 = $this->File->upload('picture2','../App/Photo/CompetitionPicture/');
@@ -787,7 +791,7 @@ class AdminController extends Controller
                     header('Location:?src=_c_o_m_p_e_t_i_t_i_o_n_&id='.$_GET['id']);
                 }
         }
-        $this->render("pages.admin.pages.update.competitionPicture",compact($this),"admin/find2");
+        $this->render("pages.admin.pages.update.competitionPicture",compact('title'),"admin/find2");
     }
 
 
