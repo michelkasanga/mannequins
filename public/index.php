@@ -48,4 +48,10 @@ if(isset($_GET['src']))
         $controller = new LoadController();
         $controller->About();
     }
+    elseif($src==='34d2405248f96f68a53d744975dace088147607a')
+    {
+        $controller = new LoadController();
+        $controller->ArticleFind();
+    }
+    
 

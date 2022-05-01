@@ -232,7 +232,7 @@
                         <div class="post-content">
                             <time datetime="<?= $articles->date;?>"><?=  App\Model\php\Time::timing($articles->date,$articles->time);?></time>
                             <h3><a href="#"><?= $articles->title;?></a></h3>
-                            <a class="post-btn" href="#"><i class="fa fa-arrow-right"></i></a>
+                            <a class="post-btn" href="?src=34d2405248f96f68a53d744975dace088147607a&id=<?= $articles->id;?>"><i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

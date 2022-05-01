@@ -19,6 +19,7 @@ class AdminController extends Controller
         $this->loadClass('Level_competition');
         $this->loadClass('Manager');
         $this->loadClass('Club');
+        $this->loadClass('Comment_article');
     }
     public function index(){
         $notice = $this->Notice->noticeSelect();
