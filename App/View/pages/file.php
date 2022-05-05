@@ -41,7 +41,7 @@
 </div>
 
 
-<?= sha1('findArticle');?>
+<?= sha1('demo');?>
   <!--   Core JS Files   -->
   <script src="../App/View/template/admin/assets/js/core/popper.min.js"></script>
   <script src="../App/View/template/admin/assets/js/core/bootstrap.min.js"></script>

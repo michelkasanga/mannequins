@@ -2,7 +2,7 @@
 namespace App\Model\Table;
 
 
-class table
+class Table
 {
     protected $db,
               $table;

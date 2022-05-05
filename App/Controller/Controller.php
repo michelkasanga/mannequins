@@ -1,5 +1,7 @@
 <?php 
 namespace App\Controller;
+use App\Auth\AuthUser;
+use App\App;
 
 class Controller
 {
@@ -11,6 +13,7 @@ class Controller
     }
     public function render($view,$variables=[],string $template)
     {
+        
         ob_start(); 
         extract($variables);
         require($this->viewPath.str_replace('.','/',$view).'.php');

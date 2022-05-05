@@ -53,5 +53,8 @@ if(isset($_GET['src']))
         $controller = new LoadController();
         $controller->ArticleFind();
     }
-    
+    elseif($src === 'admin')
+    {
+        require ROOT.'/App/Auth/connect.php';
+    }
 

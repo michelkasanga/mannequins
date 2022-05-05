@@ -1,9 +1,21 @@
 <?php
- use App\App; use App\Controller\Admin\AdminController;
+ use App\App; use App\Controller\Admin\AdminController; use App\Auth\AuthUser;
 define('ROOT',dirname(__DIR__));
 require ROOT.'/App/App.php';
 App::load();
 $app = new App();
+
+if(!empty($_POST['name']) AND !empty($_POST['password']))
+{
+    $auth = new  AuthUser($app->getDb());
+    $res = $auth->login($_POST['name'],$_POST['password']);
+    if(!$auth->logged())
+    {
+        $app->forbidden();
+    } 
+}
+
+
 
 if(isset($_GET['src']))
 {
@@ -193,6 +205,7 @@ if(isset($_GET['src']))
         $controller = new AdminController();
         $controller->deletePersonne();
     }
+
     elseif($src === 'delete_1a8565a9dc72048ba03b4156be3e569f22771f23')
     {
         $controller = new AdminController();
@@ -243,5 +256,4 @@ if(isset($_GET['src']))
         $controller = new AdminController();
         $controller->addPictureCompetition();
     }
-    
     

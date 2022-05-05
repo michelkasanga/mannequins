@@ -22,6 +22,7 @@ class AdminController extends Controller
         $this->loadClass('Comment_article');
     }
     public function index(){
+    
         $notice = $this->Notice->noticeSelect();
         $notice_all = $this->Notice->all();
         $news = $this->News->lastNews();
@@ -701,6 +702,7 @@ class AdminController extends Controller
         }
     }
 
+
     public function noticeFind()
     {
         $findNotice = $this->Notice->find($_GET['id']);
@@ -709,7 +711,8 @@ class AdminController extends Controller
     public function newsFind()
     {
         $findNews = $this->News->find($_GET['id']);
-    $this->render("pages.admin.pages.finds.news",compact('findNews'),"admin/find");
+        $commentaire = $this->Comment->find($_GET['id']);
+    $this->render("pages.admin.pages.finds.news",compact('findNews','commentaire'),"admin/find");
     }
     public function modelFind()
     {
@@ -719,7 +722,8 @@ class AdminController extends Controller
     public function ArticleFind()
     {
         $findArticle = $this->Article->find($_GET['id']);
-    $this->render("pages.admin.pages.finds.article",compact('findArticle'),"admin/find");
+        $commentaire = $this->Comment_article->find($_GET['id']);
+    $this->render("pages.admin.pages.finds.article",compact('findArticle','commentaire'),"admin/find");
     }
     public function CompetitionFind()
     {

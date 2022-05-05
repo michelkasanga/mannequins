@@ -1,28 +1,123 @@
-<?php $title= $findArticle->title.'   ';?> <p class="align-middle text-center"></small></p>
-<div class="row" style="margin-top: 20px;">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
+<?php $title= $findArticle->title.'   ';?>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-7 mt-4">
+          <div class="card">
+            <div class="card-header pb-0 px-3">
+            
+              <h6 class="mb-0"><?= $title;?></h6>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class=" p-0">
-                <div class="col-12">
-                  <div class="col-12" id="col" >
-                    <img src="../App/Photo/ArticlePicture/<?=$findArticle->picture;?>" alt="<?=$findArticle->picture;?>" class="align-middle text-center"  id="photo">
-                  </div>
-                  <h2 class="align-middle text-center" style="margin-top: 50px;"><?= $findArticle->title;?></h2>
+            <div class="card-body pt-4 p-3">
+              <ul class="list-group">
+                  
+                <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+                  
+                    <div class="d-flex text-sm flex-column" >
+                        <div class="ms-auto text-end"  >  
+
+                        </div>
+                        <div class="post-thumb" >
+                            <img class="img-fluid" id="img-fluid" src="../App/Photo/ArticlePicture/<?= $findArticle->picture;?>" alt="<?= $findArticle->picture;?>" >
+                        </div>
+                    </div>
+                </li>
+
+                
+                    <div class="card h-100 mb-4">
+                        <div class="card-header pb-0 px-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                <h6 class="mb-0">Detail</h6>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                <i class="far fa-calendar-alt me-2"></i>
+                                <small><?= App\Model\php\Time::timing($findArticle->date,$findArticle->time);?></small>
+                                </div>
+                            </div>
+                        </div>
                     
-                    <p class="align-middle text-center"><small ><?= $findArticle->date;?></small></p>
-                    <p class="align-middle text-center" style="margin-top: 60px;"><?= $findArticle->content;?>
-                    </p>
-                    
-                    
-                </div>
-              </div>
+                        <div class="card-body pt-4 p-3">
+                            <h6 class=" text-body text-xs font-weight-bolder mb-3">
+                                <p>
+                                <?= $findArticle->content;?>
+                                </p>
+                            </h6>
+                        
+                        </div>
+                    </div>
+                
+              </ul>
             </div>
           </div>
         </div>
+
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body pt-4 p-3">
+                <ul class="list-group">
+                    <!-- insert un commentaire -->
+                    
+                        
+                    
+                    
+
+                    <!-- commentaire -->
+                    <div class="col-md-6">
+                                <h6 class="mb-0">commentaires</h6>
+                                </div>
+                    <?php foreach($commentaire as $commentaires):?>
+                
+                    <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg" style="padding: 1px;">
+                  <div class="d-flex text-sm flex-column" >
+                  
+                  
+                    <div class=" text-xs" id="size"> 
+                        <span class="text-dark font-weight-bold ms-sm-2" id="size">
+                            <?= $commentaires->name.' ' ;?>
+                        </span>
+                        <small>
+                            <i><?= ' '.App\Model\php\Time::timing($commentaires->t_date,$commentaires->temp_time);?></i>
+                        </small>
+                    </div>
+
+                    <div class=" text-xs" id="size">
+                        <p>
+                        <?= $commentaires->comment;?>
+                        </p> 
+                      
+                        
+                    </div>
+                    
+                
+                  </div>
+
+                  <div class="ms-auto text-end">
+                    <form action="?src=article&id=<?= $commentaires->article_id;?>" method="post">
+                          <input type="hidden" name="id"   value="<?=$commentaires->Id;?>">
+                          <button href="?src=article&id=<?=$commentaires->Id;?>" class="icon icon-bin" style="border: none; background:none; color:red;"></button>
+                  
+                        </form>
+                        <?php 
+                    if(!empty($_POST))
+                    {
+                        $this->Comment_article->delete($_POST['id']);  
+                    }
+                    
+                    ?>
+                  </div>
+                 
+                
+                    </li>
+                    <?php endforeach;?>
+
+
+                    
+                </ul>
+                </div>
+            </div>
+        </div>
       </div>
+</div>
 <!-- end article -->
 
 
