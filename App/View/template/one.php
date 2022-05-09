@@ -6,7 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <title>
-    DRAYA|MODEL
+    <?= $title = $title ?? 'Roxanne'; ?>
   </title>
     <!-- CSS Files -->
     <link href="../App/View/template/admin/assets/css/find.css" rel="stylesheet" />
@@ -24,6 +24,9 @@
 
 	
 	<!-- Cards -->
+  <link rel="stylesheet" href="../App/View/template/set/css/font-awesome/font-awesome.css">
+  <script type="text/javascript" src="../App/View/template/set/slider/js/jquery-3.6.0.js"></script>
+    <script src="../App/View/template/set/js/jquery-3.3.1.js"></script>
 	<link rel="stylesheet" href="../App/View/template/set/post/css/cards.css">
   <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css">
 

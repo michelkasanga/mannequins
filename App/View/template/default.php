@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../App/View/template/set/css/loader/loaders.css">
     <link rel="stylesheet" href="../App/View/template/set/css/one.css">
     <link rel="stylesheet" href="../App/View/template/set/css/font-awesome/font-awesome.css">
-    <link rel="stylesheet" href="../App/View/template/set/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="../App/View/template/set/css/bootstrap.css"> -->
     <link rel="stylesheet" href="../App/View/template/set/css/aos/aos.css">
     <link rel="stylesheet" href="../App/View/template/set/css/swiper/swiper.css">
     <link rel="stylesheet" href="../App/View/template/set/css/lightgallery.min.css">
@@ -43,6 +43,8 @@
     <script src="../App/View/template/set/js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../App/View/template/set/slider/js/lightslider.js"></script>
 
+    <link rel="stylesheet" href="../App/View/template/set/post/css/cards.css">
+  <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css">
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="../App/View/template/set/css/style.css">
@@ -58,124 +60,76 @@
     <!-- Loader End -->
     <!-- Header Start -->
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
-  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+  <aside class="sidenav bg-dark navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
     <div class="sidenav-header">
-      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <i class="icon-cross p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav" style="color:black;"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
         <img src="./assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main" >
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="?src=roxanne">
+          <a class="nav-link font-weight-bold" href="?src=roxanne">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
+            <span class="nav-link-text ms-1" style="color:black;">Dashboard</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="?src=tables">
+          <a class="nav-link  font-weight-bold" href="?src=tables">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1" style="color:black;">Tables</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="?src=9f3642c94c2f071704f2ac2ad3a0b1891634b9b9">
+          <a class="nav-link font-weight-bold" href="?src=9f3642c94c2f071704f2ac2ad3a0b1891634b9b9">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">A propos</span>
+            <span class="nav-link-text ms-1" style="color:black;">A propos</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./pages/virtual-reality.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./pages/rtl.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./pages/profile.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./pages/sign-in.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./pages/sign-up.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-collection text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
-          </a>
-        </li>
+      
+        
+    
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
-      <div class="card card-plain shadow-none" id="sidenavCard">
-        <img class="w-50 mx-auto" src="./assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
-        <div class="card-body text-center p-3 w-100 pt-0">
-          <div class="docs-info">
-            <h6 class="mb-0">Need help?</h6>
-            <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
-          </div>
-        </div>
-      </div>
-      <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
-      <a class="btn btn-primary btn-sm mb-0 w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div>
+    
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+          <!-- <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?=$title  = $title ?? 'title';?></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><? //$title  = $title ?? 'title';?></li>
           </ol>
-          <h6 class="font-weight-bolder text-white mb-0"><?=$title = $title ?? 'title';?></h6>
+          <h6 class="font-weight-bolder text-white mb-0"><? //$title = $title ?? 'title';?></h6> -->
+          <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
+        <img src="./assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
+      </a>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
+              <!-- <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="Type here..."> -->
             </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+              <!-- <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Sign In</span>
-              </a>
+              </a> -->
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
@@ -186,17 +140,17 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item px-3 d-flex align-items-center">
+            <!-- <li class="nav-item px-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0">
                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
-            </li>
-            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+            </li> -->
+            <!-- <li class="nav-item dropdown pe-2 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
+              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton"> -->
+                <!-- <li class="mb-2">
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
@@ -213,8 +167,8 @@
                       </div>
                     </div>
                   </a>
-                </li>
-                <li class="mb-2">
+                </li> -->
+                <!-- <li class="mb-2">
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
@@ -231,8 +185,8 @@
                       </div>
                     </div>
                   </a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
@@ -261,7 +215,7 @@
                       </div>
                     </div>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </li>
           </ul>
@@ -289,7 +243,7 @@
         </div>
       </footer>
   </main>
-  <div class="fixed-plugin">
+  <!-- <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="fa fa-cog py-2"> </i>
     </a>
@@ -304,11 +258,15 @@
             <i class="fa fa-close"></i>
           </button>
         </div>
-        <!-- End Toggle Button -->
+        
+
+
       </div>
       <hr class="horizontal dark my-1">
       <div class="card-body pt-sm-3 pt-0 overflow-auto">
-        <!-- Sidebar Backgrounds -->
+      
+      
+
         <div>
           <h6 class="mb-0">Sidebar Colors</h6>
         </div>
@@ -322,7 +280,9 @@
             <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
           </div>
         </a>
-        <!-- Sidenav Type -->
+        
+        
+
         <div class="mt-3">
           <h6 class="mb-0">Sidenav Type</h6>
           <p class="text-sm">Choose between 2 different sidenav types.</p>
@@ -332,7 +292,9 @@
           <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default" onclick="sidebarType(this)">Dark</button>
         </div>
         <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-        <!-- Navbar Fixed -->
+      
+        
+
         <div class="d-flex my-3">
           <h6 class="mb-0">Navbar Fixed</h6>
           <div class="form-check form-switch ps-0 ms-auto my-auto">
@@ -360,7 +322,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
     <!-- Footer Endt -->
         <!--slider-->
         <script type="text/javascript" src="../App/View/template/set/slider/js/script.js"></script>

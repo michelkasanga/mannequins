@@ -216,35 +216,58 @@
     
     <!-- Featured End -->
 
+    <div id="fh5co-page">
+		<div class="fh5co-blog-style-1">
+			<div class="container">
+				<div class="row p-b">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<h2 class="fh5co-heading wow fadeInUp titre" data-wow-duration="1s" data-wow-delay=".5s">Articles</h2>
+						<!-- <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
+					</div>
+				</div>
+				<div class="row p-b">
 
-    <!-- article -->
-    <section class="recent-posts">
-        <div class="container">
-        <h5 class="titre">Articles</h5>
-            <div class="row">
-
-            <?php foreach($article as $articles):?>
-                <div class="col-lg-6">
-                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-left" data-aos-duration="800">
-                        <div class="post-thumb">
-                            <img class="img-fluid" id="img-fluid" src="../App/Photo/ArticlePicture/<?= $articles->picture;?>" alt="<?= $articles->picture;?>" >
-                        </div>
-                        <div class="post-content">
-                            <time datetime="<?= $articles->date;?>"><?=  App\Model\php\Time::timing($articles->date,$articles->time);?></time>
-                            <h3><a href="#"><?= $articles->title;?></a></h3>
-                            <a class="post-btn" href="?src=34d2405248f96f68a53d744975dace088147607a&id=<?= $articles->id;?>"><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            <?php endforeach;?>
-
-            </div>
+				<?php foreach($article as $articles):?>
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
+						<div class="fh5co-post wow fadeInLeft"  data-wow-duration="1s" data-wow-delay="1.1s">
+							<div class="fh5co-post-image">
+								<div class="fh5co-overlay"></div>	
+									<!-- <div class="fh5co-category"><a href="#">Tutorial</a></div> -->
+								<img src="../App/Photo/ArticlePicture/<?= $articles->picture;?>" alt="<?= $articles->picture;?>" class="img-responsive">
+							</div>
+							<div class="fh5co-post-text">
+								<h3><a href="?src=34d2405248f96f68a53d744975dace088147607a&id=<?= $articles->id;?>"><?= ucfirst($articles->title) ;?></a></h3>
+								<div class="card-body pt-0 p-0">
+									<h5 class=" text-body text-xs  mb-1">
+										<p> <?= htmlspecialchars(substr($articles->content,0,190).'...');?></p>
+									</h5>
+								</div>
+								
+							</div>
+							<div class="fh5co-post-meta">
+								<span ><i class="icon-comment"></i> <?= count( $this-> Comment_article->find($articles->id));?></span>
+								<span ><i class="icon-clock2"></i> <?= App\Model\php\Time::timing($articles->date,$articles->time);?></span>
+							</div>
+						</div>
+					</div>
+					
+				<?php endforeach;?>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+                    
             <div class="text-center">
                 <a href="?src=a9d24446cc1e471bf68005f34aa199e18f46287f" class="btn btn-primary">VOIR PLUS</a>
             </div>
-        </div>
-    </section>
+    
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+    <!-- article -->
+
     <!-- article End -->
 
 
