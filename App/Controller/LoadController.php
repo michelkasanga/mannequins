@@ -200,4 +200,9 @@ class LoadController extends Controller
         $this->render('pages.about',compact('abouts'),'one');
 
     }
+    public function Articles()
+    {
+        $articles = $this->Article->all();
+        $this->render('pages.articles',compact('articles'),'one');
+    }
 }

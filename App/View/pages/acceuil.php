@@ -241,7 +241,7 @@
 
             </div>
             <div class="text-center">
-                <a href="#" class="btn btn-primary">See More</a>
+                <a href="?src=a9d24446cc1e471bf68005f34aa199e18f46287f" class="btn btn-primary">VOIR PLUS</a>
             </div>
         </div>
     </section>

@@ -22,6 +22,11 @@
   <link href="../App/View/template/admin/assets/css/nucleo-svg.css" rel="stylesheet" />
 
 
+	
+	<!-- Cards -->
+	<link rel="stylesheet" href="../App/View/template/set/post/css/cards.css">
+  <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css">
+
 
       
         <link rel="stylesheet" href="../App/View/template/set/css/one.css">
