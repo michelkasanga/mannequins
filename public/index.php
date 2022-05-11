@@ -62,4 +62,9 @@ if(isset($_GET['src']))
     {
         require ROOT.'/App/Auth/connect.php';
     }
+    elseif($src === 'competition')
+    {
+        $controller = new LoadController();
+        $controller->Competition();
+    }
 

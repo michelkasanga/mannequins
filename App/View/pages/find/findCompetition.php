@@ -81,5 +81,11 @@
             </div>
           </div>
         </div>
+    </div>
+
+      <div class="row">
+        <div class="col-md-12 mt-4">
+          <a href="?src=competition"  class="btn btn-primary">voir plus de competition</a>
+        </div>
       </div>
 </div>

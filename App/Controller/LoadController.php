@@ -205,4 +205,9 @@ class LoadController extends Controller
         $articles = $this->Article->all();
         $this->render('pages.articles',compact('articles'),'one');
     }
+    public function Competition()
+    {
+        $competitions = $this->Competition->all();
+        $this->render('pages.competition', compact('competitions'), 'one');
+    }
 }
