@@ -22,7 +22,7 @@ License: Creative Commons Attribution 3.0 License
 1.0 BASE
 ///////////////////////////////////////////////////
 */
-html.mobile-menu-expanded {
+/* html.mobile-menu-expanded {
   overflow: hidden;
 }
 
@@ -60,7 +60,7 @@ h1 {
 h2 {
   font-size: 35px;
   font-weight: 700;
-}
+} */
 
 a {
   color: #1784fb;
@@ -2079,6 +2079,10 @@ a:hover, a:focus, a:active {
   width: 100%;
   height: 100%;
 }
+.fh5co-blog-style-1 .fh5co-post .fh5co-post-image .at .img-responsive{
+  width: 100%;
+  height: 100%;
+}
 .fh5co-blog-style-1 .fh5co-post .fh5co-post-image .fh5co-category > a {
   font-size: 10px;
   padding: 2px 10px;
@@ -2141,6 +2145,7 @@ a:hover, a:focus, a:active {
   margin-right: 10px;
   margin-bottom: 20px;
   color: #b3b3b3;
+  
 }
 .fh5co-blog-style-1 .fh5co-post .fh5co-post-meta span i {
   display: inline-block;

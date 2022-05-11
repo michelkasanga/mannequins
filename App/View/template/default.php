@@ -50,6 +50,15 @@
     <link rel="stylesheet" href="../App/View/template/set/css/style.css">
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="../App/View/template/set/css/responsive.css">
+    <style>
+        .btn-primary{
+          border: 2px solid white;
+          border-radius: 20px 20px 20px 20px;
+          background-color: rgba(255, 0, 179, 0.884);
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+    </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100" 6>

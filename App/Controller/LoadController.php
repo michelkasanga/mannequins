@@ -33,8 +33,8 @@ class LoadController extends Controller
     }
     public function oneNotice()
     {
-        $one = $this->Notice->find($_GET['id']);
-        $this->render('pages.one',compact('one'),'one');
+        $notice = $this->Notice->find($_GET['id']);
+        $this->render('pages.find.findNotice',compact('notice'),'one');
     }
     public function oneNew()
     {
@@ -181,11 +181,11 @@ class LoadController extends Controller
     }
     public function oneModel()
     {
-        $onemodel = $this->Model->find($_GET['id']);
-        $time = \App\Model\php\Time::timing($onemodel->date,$onemodel->time);
-        $title =$onemodel->title;
+        $findModel = $this->Model->find($_GET['id']);
+        $time = \App\Model\php\Time::timing($findModel->date,$findModel->time);
+        $title =$findModel->title;
         
-        $this->render('pages.oneModel',compact('onemodel','time','title'),'one');
+        $this->render('pages.find.findModel',compact('findModel','time','title'),'one');
 
     }
     public function findCompetition()

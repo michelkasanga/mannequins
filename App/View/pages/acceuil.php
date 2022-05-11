@@ -69,10 +69,10 @@
         </div>
     </section>
     
-<div class="all">
+<div class="all" style="padding-bottom: 0px;">
     <h1 class="titre">news</h1>
     
-<section class="slider">
+<section class=""  style="padding-bottom: 0px;">
     <ul id="autoWidth" class="cs-hidden">
         <?php foreach($news as $new):?>
         <li class="item-a">
@@ -106,19 +106,26 @@
 </div>
 
 
-    
-<div class="container gallery" id="container">
-<h1 class="titre">photo</h1>
-    <section class="row slider"  id=" lightgallery">
+<div id="fh5co-page">
+		<div class="fh5co-blog-style-1">
+			<div class="container gallery">
+				<div class="row p-b">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<h2 class="fh5co-heading wow fadeInUp titre" data-wow-duration="1s" data-wow-delay=".5s">model</h2>
+						<!-- <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
+					</div>
+				</div>
+				<div class="row p-b "  id=" lightgallery">
+
             
     
     <?php foreach($model as $models): ?>
-        <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4" id="box">
+        <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4" id="box" style="height: 200px; padding:0;">
             <div id="gallery" class="gallery">    
             
-                    <div  id="lightgallery">
+                    <div  id="lightgallery" class="lightgallery" style="width: 100%; height:100%;">
                         <a href="../App/Photo/ModelPicture/<?=$models->picture;?>" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="400">
-                            <img class="img-fluid" src="../App/Photo/ModelPicture/<?=$models->picture;?>" alt="Gallery Image">
+                            <img class="img-fluid" src="../App/Photo/ModelPicture/<?=$models->picture;?>" alt="Gallery Image" style="width: 100%; height:100%;">
                             <i class="fa fa-caret-right"></i>
                         </a>
                         
@@ -136,9 +143,21 @@
             </div>
         </div>
         <?php endforeach; ?>
-    </section>
-</div>
 
+
+        </div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
+                    
+            <div class="text-center">
+                <a href="?src=a9d24446cc1e471bf68005f34aa199e18f46287f" class="btn btn-primary">VOIR PLUS</a>
+            </div>
+    
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
                     
     <!-- Call To Action End -->
     <!-- Services Start -->

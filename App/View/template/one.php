@@ -22,13 +22,16 @@
   <link href="../App/View/template/admin/assets/css/nucleo-svg.css" rel="stylesheet" />
 
 
-	
+	<link rel="stylesheet" type="text/css" href="../App/View/template/set/galerie/css/lightbox.css">
 	<!-- Cards -->
   <link rel="stylesheet" href="../App/View/template/set/css/font-awesome/font-awesome.css">
   <script type="text/javascript" src="../App/View/template/set/slider/js/jquery-3.6.0.js"></script>
     <script src="../App/View/template/set/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../App/View/template/set/galerie/js/lightbox-plus-jquery.min.js"></script>
+
 	<link rel="stylesheet" href="../App/View/template/set/post/css/cards.css">
   <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css">
+  
 
 
       
@@ -73,6 +76,7 @@
   <script src="../App/View/template/admin/assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../App/View/template/admin/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../App/View/template/admin/assets/js/plugins/chartjs.min.js"></script>
+  
 
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

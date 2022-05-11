@@ -752,7 +752,25 @@ class AdminController extends Controller
             if(isset($picture1) AND isset($picture20) AND isset($picture3) AND isset($picture4) AND isset($picture5) AND isset($picture6))
             {
                 $this->Model->update($_GET['id'],[
-                    'picture2' => ",$picture1? ,$picture20? ,$picture3? ,$picture4? ,$picture5? ,$picture6? "
+                    'picture2' => "DEBUT <a href='../App/Photo/ModelPicture/$picture1' class='at'  data-lightbox='mygellary'>
+                        <img src='../App/Photo/ModelPicture/$picture1' class='img-responsive'>
+                     </a> FIN
+                     DEBUT <a href='../App/Photo/ModelPicture/$picture20' class='at'  data-lightbox='mygellary'>
+                     <img src='../App/Photo/ModelPicture/$picture20' class='img-responsive'>
+                  </a> FIN
+                  DEBUT <a href='../App/Photo/ModelPicture/$picture3' class='at'  data-lightbox='mygellary'>
+                  <img src='../App/Photo/ModelPicture/$picture3' class='img-responsive'>
+               </a> FIN 
+               DEBUT <a href='../App/Photo/ModelPicture/$picture4' class='at'  data-lightbox='mygellary'>
+               <img src='../App/Photo/ModelPicture/$picture4' class='img-responsive'>
+            </a> FIN 
+            DEBUT <a href='../App/Photo/ModelPicture/$picture5' class='at'  data-lightbox='mygellary'>
+            <img src='../App/Photo/ModelPicture/$picture5' class='img-responsive'>
+         </a> FIN
+             DEBUT <a href='../App/Photo/ModelPicture/$picture6' class='at'  data-lightbox='mygellary'>
+                    <img src='../App/Photo/ModelPicture/$picture6' class='img-responsive'>
+                 </a> FIN
+                    "
                 ]);
                 header('Location:?src=model&id='.$find->id);
             }
@@ -760,7 +778,25 @@ class AdminController extends Controller
                 if(isset($picture1) AND isset($picture20) AND isset($picture3) AND isset($picture4) AND isset($picture5) AND isset($picture6))
                 {
                     $this->Model->update($_GET['id'],[
-                        'picture2' => "$picture ,$picture1? ,$picture20?  ,$picture3? ,$picture4? ,$picture5? ,$picture6? "
+                        'picture2' => "$picture DEBUT <a href='../App/Photo/ModelPicture/$picture1' class='at'  data-lightbox='mygellary'>
+                        <img src='../App/Photo/ModelPicture/$picture1' class='img-responsive'>
+                     </a> FIN
+                     DEBUT <a href='../App/Photo/ModelPicture/$picture20' class='at'  data-lightbox='mygellary'>
+                     <img src='../App/Photo/ModelPicture/$picture20' class='img-responsive'>
+                  </a> FIN
+                  DEBUT <a href='../App/Photo/ModelPicture/$picture3' class='at'  data-lightbox='mygellary'>
+                  <img src='../App/Photo/ModelPicture/$picture3' class='img-responsive'>
+               </a> FIN 
+               DEBUT <a href='../App/Photo/ModelPicture/$picture4' class='at'  data-lightbox='mygellary'>
+               <img src='../App/Photo/ModelPicture/$picture4' class='img-responsive'>
+            </a> FIN 
+            DEBUT <a href='../App/Photo/ModelPicture/$picture5' class='at'  data-lightbox='mygellary'>
+            <img src='../App/Photo/ModelPicture/$picture5' class='img-responsive'>
+         </a> FIN
+             DEBUT <a href='../App/Photo/ModelPicture/$picture6' class='at'  data-lightbox='mygellary'>
+                    <img src='../App/Photo/ModelPicture/$picture6' class='img-responsive'>
+                 </a> FIN
+                    "
                     ]);
                     header('Location:?src=model&id='.$_GET['id']);
                 }
