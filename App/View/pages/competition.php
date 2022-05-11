@@ -4,7 +4,7 @@
 			<div class="container">
 				<div class="row p-b">
 					<div class="col-md-6 col-md-offset-3 text-center">
-						<h2 class="fh5co-heading wow fadeInUp title" data-wow-duration="1s" data-wow-delay=".5s">--- --- ---</h2>
+						<h2 class="fh5co-heading wow fadeInUp title" data-wow-duration="1s" data-wow-delay=".5s"></h2>
 						<!-- <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
 					</div>
 				</div>

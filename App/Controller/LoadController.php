@@ -197,17 +197,17 @@ class LoadController extends Controller
     public function About()
     {
         $abouts = $this->About->all();
-        $this->render('pages.about',compact('abouts'),'one');
+        $this->render('pages.about',compact('abouts'),'default');
 
     }
     public function Articles()
     {
         $articles = $this->Article->all();
-        $this->render('pages.articles',compact('articles'),'one');
+        $this->render('pages.articles',compact('articles'),'default');
     }
     public function Competition()
     {
         $competitions = $this->Competition->all();
-        $this->render('pages.competition', compact('competitions'), 'one');
+        $this->render('pages.competition', compact('competitions'), 'default');
     }
 }

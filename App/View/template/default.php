@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
     
-    <link rel="icon" href="../App/View/template/set/images/LOGO DRAYA.png" type="image/gif" />
+    <link rel="icon" href="../App/View/template/set/images/logo2.png" type="image/gif" />
 
     <title>DRAYA MODEL</title>
     <!-- Stylesheets & Fonts -->
@@ -54,9 +54,20 @@
         .btn-primary{
           border: 2px solid white;
           border-radius: 20px 20px 20px 20px;
-          background-color: rgba(255, 0, 179, 0.884);
+          background-color: red;
           padding-left: 30px;
           padding-right: 30px;
+        }
+        #photo{
+        
+          width: 55px;
+          height: 40px;
+          padding: 0;
+          margin: 0;
+        }
+        #photo #photo1{
+          width: 100%;
+          height: 100%;
         }
     </style>
 </head>
@@ -72,34 +83,42 @@
   <aside class="sidenav bg-dark navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="icon-cross p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav" style="color:black"></i>
-      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
-        <img src="./assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
+      <a class="navbar-brand m-0" href="./ " target="_blank">
+        <img src="../App/View/template/set/images/logo1.png" class="navbar-brand-img h-200" alt="main_logo">
+        <span class="ms-1 font-weight-bold" style="color:black;" >DRAYA MODEL</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main" >
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link font-weight-bold" href="?src=roxanne">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+          <a class="nav-link font-weight-bold" href="./">
+            <div class="icon icon-home icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni- text-primary text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1" style="color:black;">Dashboard</span>
+            <span class="nav-link-text ms-1" style="color:black;">Acceuil</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  font-weight-bold" href="?src=tables">
+          <a class="nav-link  font-weight-bold" href="?src=competition">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1" style="color:black;">Tables</span>
+            <span class="nav-link-text ms-1" style="color:black;">Competition</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  font-weight-bold" href="?src=a9d24446cc1e471bf68005f34aa199e18f46287f">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1" style="color:black;">Articles</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link font-weight-bold" href="?src=9f3642c94c2f071704f2ac2ad3a0b1891634b9b9">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            <div class="icon icon-user icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class=" text-success text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1" style="color:black;">A propos</span>
           </a>
@@ -114,15 +133,17 @@
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-1 px-3">
+      <div class="container-fluid py-0 px-0">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?=$title  = $title ?? 'title';?></li>
-          </ol>
-          <h6 class="font-weight-bolder text-white mb-0"><?=$title = $title ?? 'title';?></h6>
+        <ul class="navbar-nav  justify-content-start">
+          
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center" id="photo">
+                <img src="../App/View/template/set/images/logo1.png" class="navbar-brand-img h-200" alt="main_logo" id="photo1">
+              </a>
+            </li>
+          
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4  py-1 px-1" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
               <!-- <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
@@ -142,6 +163,7 @@
                   <i class="sidenav-toggler-line bg-white"></i>
                   <i class="sidenav-toggler-line bg-white"></i>
                   <i class="sidenav-toggler-line bg-white"></i>
+                  
                 </div>
               </a>
             </li>

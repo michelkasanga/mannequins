@@ -19,7 +19,7 @@
                     <div class="text-xs" id="size">Tel: <span class="text-dark ms-sm-2 font-weight-bold" id="size"><?= $find->number_phone;?></span></div>
                     <div class="text-xs" id="size">Nationalité: <span class="text-dark ms-sm-2 font-weight-bold" id="size"><?= $find->nationality;?></span></div>
                     <div class="text-xs" id="size">Sexe: <span class="text-dark ms-sm-2 font-weight-bold" id="size"><?= $find->sex;?></span></div>
-                    <div class="text-xs" id="size">Age: <span class="text-dark ms-sm-2 font-weight-bold" id="size"><?= $annees;?></span></div>
+                    <div class="text-xs" id="size">Age: <span class="text-dark ms-sm-2 font-weight-bold" id="size"><?= $annees;?> ans</span></div>
                 
                   </div>
                  
