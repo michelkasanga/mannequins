@@ -1,4 +1,9 @@
+<?php
 
+use App\App;
+
+$user =  App::getTable('Auth')->find($_SESSION['auth']);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -44,7 +49,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="?src=admin&id=<?= $_GET['id'] ?>">
+          <a class="nav-link active" href="?src=admin">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -52,7 +57,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="?src=tables&id=<?= $_GET['id'] ?>">
+          <a class="nav-link " href="?src=tables">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -60,7 +65,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="?src=factory&id=<?= $_GET['id'] ?>"">
+          <a class="nav-link " href="?src=factory">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -91,7 +96,7 @@
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Profile</span>
+            <span class="nav-link-text ms-1"><?= $user->username;?></span>
           </a>
         </li>
         <li class="nav-item">
@@ -148,7 +153,7 @@
             <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
+                <span class="d-sm-inline d-none"><?= $user->username;?></span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">

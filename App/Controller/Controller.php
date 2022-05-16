@@ -6,23 +6,29 @@ use App\App;
 class Controller
 {
     protected $viewPath;
+    protected $template;
 
-    public function __construct()
-    {
-        $this->viewPath=ROOT.'/App/View/';
-    }
-    public function render($view,$variables=[],string $template)
+    protected function render($view,$variables=[], $template)
     {
         
         ob_start(); 
         extract($variables);
         require($this->viewPath.str_replace('.','/',$view).'.php');
         $content = ob_get_clean();
-        require($this->viewPath.'template/'.$template.'.php'); 
-    }
-    public function loadClass($class_name)
-    {
-        $this->$class_name = \App\App::getTable($class_name);
+        require($this->viewPath.'template/'.$this->template = $template.'.php'); 
     }
 
+    public function forbidden()
+    {
+        header('HTTP/1.0 403 Forbidden');
+        var_dump(sha1('demo'));
+        die('Acces interdit');
+
+    }
+
+    protected function notFound()
+    {
+        header('HTTP/1.0 404 Not Found');
+        die('page introuvable');
+    }
 }

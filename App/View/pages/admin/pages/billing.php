@@ -5,7 +5,7 @@
           <div class="row">
             <div class="col-xl-6 mb-xl-0 mb-4">
               <div class="card bg-transparent shadow-xl">
-                <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/card-visa.jpg');">
+                <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('../App/Photo/ServicePicture6529259bbbee462db98fef613c98e752.jpg');">
                   <span class="mask bg-gradient-dark"></span>
                   <div class="card-body position-relative z-index-1 p-3">
                     <i class="fas fa-wifi text-white p-2"></i>

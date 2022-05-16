@@ -3,38 +3,33 @@
 define('ROOT',dirname(__DIR__));
 require ROOT.'/App/App.php';
 App::load();
-$app = new App();
+$app = App::getInstance();
 
-
-if (isset($_GET['id']) AND $_GET['id']>0) {
-    $get=intval($_GET['id']);
-      
-    $control = $app->getTable('Auth')->find($get);
-    session_status();
-
-
-    
-         
 
         if (isset($_GET['src'])) {
-            $src=$_GET['src'];
+            $src=$_GET['src']; 
         } else {
-            $src = 'admin'  and $get;
+            $src = 'home';
         }
+
     
-        if ($src === 'admin'  and $get) {
+        if ($src === 'home' ) {
             $controller = new AdminController();
             $controller->index();
         } elseif ($src === 'addNotice') {
             $controller = new AdminController();
             $controller->AddNotice();
-        } elseif ($src === 'tables' and $get) {
+        } elseif ($src === 'tables' ) {
             $controller = new AdminController();
             $controller->tables();
         } elseif ($src === 'addModel') {
             $controller = new AdminController();
             $controller->AddModel();
-        } elseif ($src === 'addNews') {
+        }elseif ($src === 'addService') {
+            $controller = new AdminController();
+            $controller->AddService();
+        }
+         elseif ($src === 'addNews') {
             $controller = new AdminController();
             $controller->AddNews();
         } elseif ($src === 'addArticle') {
@@ -109,7 +104,7 @@ if (isset($_GET['id']) AND $_GET['id']>0) {
         } elseif ($src === 'editPersonneTitle') {
             $controller = new AdminController();
             $controller->editPersonneTitle();
-        } elseif ($src === 'addAbout'and $get) {
+        } elseif ($src === 'addAbout') {
             $controller = new AdminController();
             $controller->AddAbout();
         } elseif ($src === 'deleteNews' and $get) {
@@ -161,7 +156,3 @@ if (isset($_GET['id']) AND $_GET['id']>0) {
             $controller = new AdminController();
             $controller->addPictureCompetition();
         }
-    
-}else{
-        echo ('Acces refuser');
-    }

@@ -41,7 +41,7 @@
 </div>
 
 
-<?= sha1('articles');?>
+<?= sha1('date("format",timestamp)');?>
   <!--   Core JS Files   -->
   <script src="../App/View/template/admin/assets/js/core/popper.min.js"></script>
   <script src="../App/View/template/admin/assets/js/core/bootstrap.min.js"></script>

@@ -25,17 +25,14 @@ class AuthUser
     */
     public function login($name,$password)
     {
-        $user = $this->db->request('SELECT * FROM admin WHERE name=?',[$name],null,true);
+        $user = $this->db->request('SELECT * FROM users WHERE username=?',[$name],true);
          
         if($user)
         {
-            foreach($user as $users)
+            
+            if($user->password ===  sha1($password))
             {
-                
-            }
-            if($users->password===sha1($password))
-            {
-                $_SESSION['auth'] = $users->id;
+                $_SESSION['auth'] = $user->id;
                 return true;
             }
         }
@@ -48,4 +45,4 @@ class AuthUser
     }
 
 
-}
+}  

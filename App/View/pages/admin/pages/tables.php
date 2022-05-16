@@ -1,12 +1,86 @@
 <?php $title='Tables';?>
 <div class="container-fluid py-4">
 
+<!-- service -->
+<div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6>Table Service</h6><span class="btn btn-primary" > <a href="?src=addService"> AJOUTER</a></span>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                    <th class="align-middle text-center">Id</th>
+                      <th class="align-middle text-left">Photo</th>
+                      <th class="align-middle text-center">Service</th>
+                      <th class="align-middle text-center">Date Ajout</th>
+                      <th class="align-middle text-center">Action</th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                  <?php foreach($services as $service):?>
+                    <tr>
+                      <td class="align-middle text-center">
+                          <span class="text-secondary text-xs font-weight-bold"><?=$service->id;?></span>
+                      </td>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../App/Photo/ServicePicture/<?=$service->picture;?>" class="avatar avatar-sm me-3" alt="user2">
+                          </div>
+                        </div>
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"><?=$service->title?></span>
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"><?=  date_format(date_create($service->date),'d M Y  H:i');?></span>
+                      </td>
+
+
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">
+                        <a href="?src=editService&id=<?=$service->id;?>" >
+                        <div class="btn btn-warning">
+                            modif
+                          </div>
+                        </a>
+                      
+                        <form action="?src=deleteService" method="post" style="display: inline;">
+                          <input type="hidden" name="id"   value="<?=$service->id;?>">
+                          <button href="?src=deleteService&id=<?=$service->id;?>" class="btn btn-danger">delete</button>
+                        </form>
+                      
+                        </span>
+                      </td>
+                      <td>
+                        <a class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto" href="?src=Service&id=<?=$service->id;?>">
+                          <i class="ni ni-bold-right" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <?php endforeach;?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- end service -->
     <!-- tables news -->
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table News</h6><span class="btn btn-primary" > <a href="?src=addNews&id=<?= $_GET['id'] ?>"> AJOUTER</a></span>
+              <h6>Table News</h6><span class="btn btn-primary" > <a href="?src=addNews"> AJOUTER</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -57,7 +131,7 @@
                           </div>
                         </a>
                       
-                        <form action="?src=deleteNews&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                        <form action="?src=deleteNews" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$new->id;?>">
                           <button href="?src=deleteNews&id=<?=$new->id;?>" class="btn btn-danger">delete</button>
                         </form>
@@ -89,7 +163,7 @@
             </div>
             <div class="col-md-10 d-flex justify-content-end align-items-center">
                 
-                  <small><a href="?src=addModel&id=<?= $_GET['id'] ?>" class="btn btn-primary">Ajouter</a></small>
+                  <small><a href="?src=addModel" class="btn btn-primary">Ajouter</a></small>
                 </div>
             <div class="card-body pt-4 p-3">
             
@@ -137,7 +211,7 @@
                             </div>
                           </a>
                         
-                          <form action="?src=deleteModel&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                          <form action="?src=deleteModel" method="post" style="display: inline;">
                             <input type="hidden" name="id"   value="<?=$model->id;?>">
                             <button href="?src=deleteModel&id=<?=$model->id;?>" class="btn btn-danger">supp</button>
                           </form>
@@ -172,7 +246,7 @@
                 </div>
                 <div class="col-md-6 d-flex justify-content-end align-items-center">
                   <i class="far fa-calendar-alt me-2"></i>
-                  <small><a href="?src=addCategory_model&id=<?= $_GET['id'] ?>" class="btn btn-primary">Ajouter</a></small>
+                  <small><a href="?src=addCategory_model" class="btn btn-primary">Ajouter</a></small>
                 </div>
               </div>
             </div>
@@ -238,7 +312,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table Article</h6><span  > <a href="?src=addArticle&id=<?= $_GET['id'] ?>" class="btn btn-primary"> Ajouter</a></span>
+              <h6>Table Article</h6><span  > <a href="?src=addArticle" class="btn btn-primary"> Ajouter</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -289,7 +363,7 @@
                           </div>
                         </a>
                       
-                        <form action="?src=deleteArticle&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                        <form action="?src=deleteArticle" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$articles->id;?>">
                           <button href="?src=deleteArticle&id=<?=$articles->id;?>" class="btn btn-danger">delete</button>
                         </form>
@@ -318,7 +392,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table Competition</h6> <a href="?src=addCompet&id=<?= $_GET['id'] ?>" class="btn btn-primary"> Ajouter</a></span>
+              <h6>Table Competition</h6> <a href="?src=addCompet" class="btn btn-primary"> Ajouter</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -388,7 +462,7 @@
                               modif
                             </div>
                           </a>
-                          <form action="?src=deleteCompet&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                          <form action="?src=deleteCompet" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$compet->ID;?>">
                           <button href="?src=deleteCompet&id=<?=$compet->ID;?>" class="btn btn-danger">delete</button>
                         </form>
@@ -423,7 +497,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table Club</h6> <a href="?src=addPersonne&id=<?= $_GET['id'] ?>" class="btn btn-primary"> Ajouter</a></span>
+              <h6>Table Club</h6> <a href="?src=addPersonne" class="btn btn-primary"> Ajouter</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -478,7 +552,7 @@
                               modif
                             </div>
                           </a>
-                          <form action="?src=deletePersonne&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                          <form action="?src=deletePersonne" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$club->id;?>">
                           <button href="?src=deletePersonne&id=<?=$club->id;?>" class="btn btn-danger">delete</button>
                         </form>
