@@ -6,6 +6,10 @@ use App\Auth\AuthUser;
 
 class UserController extends AppController
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
     public function login()
     {
         $title = 'Connection';

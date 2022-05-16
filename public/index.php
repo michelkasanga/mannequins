@@ -1,6 +1,7 @@
 <?php
-use App\Controller\LoadController; use App\Controller\UserController;
+use App\Controller\Admin\ProfileController;
 use App\Controller\Admin\AdminController; use App\App; 
+use App\Controller\LoadController; use App\Controller\UserController;
 
 define('ROOT',dirname(__DIR__));
 require ROOT.'/App/App.php';
@@ -217,6 +218,9 @@ if(isset($_GET['src']))
     } elseif ($src === '5cc91d5ef4ee351d0d02593bdd83b9e3840940c6') {
         $controller = new AdminController();
         $controller->addPictureCompetition();
+    }elseif($src === 'profile'){
+        $controller = new ProfileController();
+        $controller->profile();
     }
 
 

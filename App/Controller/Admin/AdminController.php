@@ -878,4 +878,5 @@ class AdminController extends AppController
         $this->render("pages.admin.pages.billing",compact('manager','level','abouts'),"admin/default");
     }
     
+    
 }
