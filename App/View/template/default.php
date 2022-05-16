@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Document title -->
     
-    <link rel="icon" href="../App/View/template/set/images/logo2.png" type="image/gif" />
+    <link rel="icon" href="../App/View/template/set/images/logo1.png" type="image/gif" />
 
     <title>DRAYA MODEL</title>
     <!-- Stylesheets & Fonts -->

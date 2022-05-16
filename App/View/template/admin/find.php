@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="../App/View/template/set/images/logo2.png" type="image/gif" />
+  <link rel="icon" href="../App/View/template/set/images/logo1.png" type="image/gif" />
   <title>
   <?= $title = $title ?? ' '; ?>
   </title>

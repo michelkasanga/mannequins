@@ -1,11 +1,13 @@
 <?php
 namespace App\Controller\Admin;
+
 use App\Controller\Controller;
 
 class AdminController extends Controller
 {
     public function __construct()
     {
+    
         parent::__construct();
         $this->loadClass("Notice");
         $this->loadClass("News");
@@ -20,6 +22,7 @@ class AdminController extends Controller
         $this->loadClass('Manager');
         $this->loadClass('Club');
         $this->loadClass('Comment_article');
+        $this->loadClass('Auth');
     }
     public function index(){
     
@@ -74,7 +77,7 @@ class AdminController extends Controller
     {
         $title = 'parlez a propos de vous';
     
-        $lien = '?src=factory';
+        $lien = '?src=factory&id='.$_GET['id'];
         $picture1 = $this->File->upload('picture1','../App/Photo/About/');
         $picture2 = $this->File->upload('picture2','../App/Photo/About/');
         $picture3 = $this->File->upload('picture3','../App/Photo/About/');
@@ -91,7 +94,7 @@ class AdminController extends Controller
                     'picture3' => $picture3
 
                 ]);
-                header('Location:?src=factory');
+                return $this->factory();
             endif;
         endif;
         $this->render("pages.admin.pages.addAbout",compact('title','lien'),"admin/find");
@@ -107,7 +110,7 @@ class AdminController extends Controller
                     'content' => $_POST['content'],
                     'date' => date('Y-m-d H:i:s')
                 ]);
-                header('Location:?src=roxanne');
+                return $this->index();
             endif;
         endif;
         $this->render("pages.admin.pages.addNotice",compact("title"),"admin/find2");
@@ -128,7 +131,7 @@ class AdminController extends Controller
                     'date' => date('Y-m-d H:i:s'),
                     'time' => "$time"
                 ]);
-                header('Location:?src=tables');
+                return $this->tables();
             endif;
         endif;
         $this->render("pages.admin.pages.addNews",compact('title'),"admin/find2");
@@ -150,7 +153,7 @@ class AdminController extends Controller
                     'date' => date('Y-m-d H:i:s'),
                     
                 ]);
-                header('Location:?src=tables');
+                return $this->tables();
             endif;
         endif;
         $this->render("pages.admin.pages.addPersonne",compact('title'),"admin/find");
@@ -170,7 +173,7 @@ class AdminController extends Controller
                     'date' => date('Y-m-d H:i:s'),
                     'time' => "$time"
                 ]);
-                header('Location:?src=tables');
+                return $this->tables();
             endif;
         endif;
         $this->render("pages.admin.pages.addNews",compact('title'),"admin/find2");
@@ -192,7 +195,7 @@ class AdminController extends Controller
                     'category_id' => $_POST['category']
 
                 ]);
-                header('Location:?src=tables');
+                return $this->tables();
             endif;
         endif;
         $this->render("pages.admin.pages.addModel",compact('category'),"admin/find2");
@@ -226,7 +229,7 @@ class AdminController extends Controller
                     'time' => "$time"
 
                 ]);
-                header('Location:?src=tables');
+                return $this->tables();
             endif;
         endif;
         $this->render("pages.admin.pages.addCompet",compact('level','title','manager'),"admin/find2");
@@ -243,7 +246,7 @@ class AdminController extends Controller
                     'title' => $_POST['category']
 
                 ]);
-                header('Location:?src=tables');
+                return $this->tables();
             endif;
         endif;
         $this->render("pages.admin.pages.addCategory_model",compact("title"),"admin/find2");
@@ -266,7 +269,7 @@ class AdminController extends Controller
                     'date' => date('Y-m-d H:i:s')
 
                 ]);
-                header('Location:?src=factory');
+                return $this->factory();
             endif;
         endif;
         $this->render("pages.admin.pages.addManager",compact('title'),"admin/find2");
@@ -276,7 +279,7 @@ class AdminController extends Controller
     {
         $title = 'Editer vos competences';
     
-        $lien = '?src=factory';
+        $lien = '?src=factory&id='.$_GET['id'];
         $find = $this->About->find($_GET['id']);
         
         if(!empty($_POST['competence'])):
@@ -286,7 +289,7 @@ class AdminController extends Controller
                     'competence' => $_POST['competence']
 
                 ]);
-                header('Location:?src=factory');
+                return $this->factory();
             endif;
         endif;
         $this->render("pages.admin.pages.editAboutCompetence",compact('title','lien','find'),"admin/find");
@@ -374,7 +377,7 @@ class AdminController extends Controller
     {
         $title = 'Editer vos  contenus';
     
-        $lien = '?src=factory';
+        $lien = '?src=factory&id='.$_GET['id'];
         $find = $this->About->find($_GET['id']);
         
         if(!empty($_POST['content'])):
@@ -394,7 +397,7 @@ class AdminController extends Controller
         $find = $this->Club->find($_GET['id']);
         $type = 'text';
         $title='Editer le contenue de '.$find->name;
-        $reset = 'tables';
+        $reset = 'tables&id='.$_GET['id'];
         $titre = 'Titre de la personne';
     
         
@@ -487,7 +490,7 @@ class AdminController extends Controller
     public function editManager()
     {
         $find = $this->Manager->find($_GET['id']);
-        $lien = '?src=factory';
+        
         if(!empty($_POST['name']) AND !empty($_POST['email']) AND !empty($_POST['number_phone']) AND !empty($_POST['sex']) AND !empty($_POST['nationality']) AND !empty($_POST['year_b'])):
             if(isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['number_phone']) AND isset($_POST['sex']) AND isset($_POST['nationality']) AND isset($_POST['year_b'])):
                 
@@ -501,10 +504,10 @@ class AdminController extends Controller
                     'year_b' => $_POST['year_b']
 
                 ]);
-                header('Location:?src=factory');
+                return $this->factory();
             endif;
         endif;
-        $this->render("pages.admin.pages.editManager",compact('find','lien'),"admin/find2");
+        $this->render("pages.admin.pages.editManager",compact('find'),"admin/find2");
     }
 
     public function EditeManager()
@@ -552,7 +555,7 @@ class AdminController extends Controller
                     'level' => $_POST['level'],
                     'detail' => $_POST['detail']
                 ]);
-                header('Location:?src=tables');
+                return $this->tables();
             endif;
         endif;
         $this->render("pages.admin.pages.editCompet",compact('level','title','find','manager'),"admin/find2");
@@ -569,7 +572,7 @@ class AdminController extends Controller
                 'title'=>$_POST['title'],
                 'content'=>$_POST['content']
             ]);
-            header('Location:?src=tables');
+            return $this->tables();
         endif;
         $this->render("pages.admin.pages.editNews",compact('find','title'),"admin/find");
     }
@@ -583,7 +586,7 @@ class AdminController extends Controller
                 'title'=>$_POST['title'],
                 'content'=>$_POST['content']
             ]);
-            header('Location:?src=tables');
+            return $this->tables();
         endif;
         $this->render("pages.admin.pages.editNews",compact('find','title'),"admin/find2");
     }
@@ -596,7 +599,7 @@ class AdminController extends Controller
                 'title'=>$_POST['category']
                 
             ]);
-            header('Location:?src=tables');
+            return $this->tables();
         endif;
         $this->render("pages.admin.pages.editCategory_model",compact('find'),"admin/find2");
     }
@@ -611,7 +614,7 @@ class AdminController extends Controller
                 'title'=>$_POST['title'],
                 'content'=>$_POST['content']
             ]);
-            header('Location:?src=roxanne');
+            return $this->index();
         endif;
         $this->render("pages.admin.pages.editNews",compact('find','title'),"admin/find");
     }
@@ -622,7 +625,7 @@ class AdminController extends Controller
         if(!empty($_POST['title'])):
             if(isset($_POST['title'])):
                 $this->Level_competition->update($_GET['id'], [ 'title' => $_POST['title'] ]);
-                header('Location:?src=factory');
+                return $this->factory();
             endif;
         endif;
         $this->render("pages.admin.pages.editLevel",compact('find'),"admin/find2");
@@ -637,7 +640,7 @@ class AdminController extends Controller
             $res = $this->Model->update($_GET['id'],[
                 'category_id'=>$_POST['category']
             ]);
-            header('Location:?src=tables');
+            return $this->tables();
         endif;
         $this->render("pages.admin.pages.editModel",compact('category'),"admin/find");
     }
@@ -649,7 +652,7 @@ class AdminController extends Controller
         {
              $this->News->delete($_POST['id']);
              $this->News->deleteComment($_POST['id']);
-             header('Location:?src=tables');
+            return $this->tables();
         }
     }
     public function deleteArticle()
@@ -658,7 +661,7 @@ class AdminController extends Controller
         {
              $this->Article->delete($_POST['id']);
             
-             header('Location:?src=tables');
+             return $this->tables();
         }
     }
     public function deleteNotice()
@@ -666,7 +669,7 @@ class AdminController extends Controller
         if(!empty($_POST))
         {
              $this->Notice->delete($_POST['id']);
-             header('Location:?src=roxanne');
+             return $this->index();
         }
     }
     public function deletemanager()
@@ -674,7 +677,7 @@ class AdminController extends Controller
         if(!empty($_POST))
         {
              $this->Manager->delete($_POST['id']);
-             header('Location:?src=factory');
+             return $this->factory();
         }
     }
     public function deleteModel()
@@ -682,7 +685,7 @@ class AdminController extends Controller
         if(!empty($_POST))
         {
              $this->Model->delete($_POST['id']);
-             header('Location:?src=tables');
+             return $this->tables();
         }
     }
     public function deletePersonne()
@@ -690,7 +693,7 @@ class AdminController extends Controller
         if(!empty($_POST))
         {
              $this->Club->delete($_POST['id']);
-             header('Location:?src=tables');
+             return $this->tables();
         }
     }
     public function deleteCompet()
@@ -698,7 +701,7 @@ class AdminController extends Controller
         if(!empty($_POST))
         {
              $this->Competition->delete($_POST['id']);
-             header('Location:?src=tables');
+             return $this->tables();
         }
     }
 
@@ -843,5 +846,5 @@ class AdminController extends Controller
         $abouts = $this->About->all();
         $this->render("pages.admin.pages.billing",compact('manager','level','abouts'),"admin/default");
     }
-
+    
 }

@@ -69,7 +69,7 @@
                       <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Modifier</button>
                     </div>
                     <div class="text-center">
-                      <a href="<?= $lien;?>" class="btn btn-lg btn-danger btn-lg w-100 mt-4 mb-0">Annuler</a>
+                      <a href="?src=factory&id=<?= $_GET['id'];?>" class="btn btn-lg btn-danger btn-lg w-100 mt-4 mb-0">Annuler</a>
                     </div>
                 </form>
 

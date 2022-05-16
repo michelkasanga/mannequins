@@ -6,7 +6,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table News</h6><span class="btn btn-primary" > <a href="?src=addNews"> AJOUTER</a></span>
+              <h6>Table News</h6><span class="btn btn-primary" > <a href="?src=addNews&id=<?= $_GET['id'] ?>"> AJOUTER</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -57,7 +57,7 @@
                           </div>
                         </a>
                       
-                        <form action="?src=deleteNews" method="post" style="display: inline;">
+                        <form action="?src=deleteNews&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$new->id;?>">
                           <button href="?src=deleteNews&id=<?=$new->id;?>" class="btn btn-danger">delete</button>
                         </form>
@@ -89,7 +89,7 @@
             </div>
             <div class="col-md-10 d-flex justify-content-end align-items-center">
                 
-                  <small><a href="?src=addModel" class="btn btn-primary">Ajouter</a></small>
+                  <small><a href="?src=addModel&id=<?= $_GET['id'] ?>" class="btn btn-primary">Ajouter</a></small>
                 </div>
             <div class="card-body pt-4 p-3">
             
@@ -137,7 +137,7 @@
                             </div>
                           </a>
                         
-                          <form action="?src=deleteModel" method="post" style="display: inline;">
+                          <form action="?src=deleteModel&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                             <input type="hidden" name="id"   value="<?=$model->id;?>">
                             <button href="?src=deleteModel&id=<?=$model->id;?>" class="btn btn-danger">supp</button>
                           </form>
@@ -172,7 +172,7 @@
                 </div>
                 <div class="col-md-6 d-flex justify-content-end align-items-center">
                   <i class="far fa-calendar-alt me-2"></i>
-                  <small><a href="?src=addCategory_model" class="btn btn-primary">Ajouter</a></small>
+                  <small><a href="?src=addCategory_model&id=<?= $_GET['id'] ?>" class="btn btn-primary">Ajouter</a></small>
                 </div>
               </div>
             </div>
@@ -210,7 +210,7 @@
                             </div>
                           </a>
 <!--                         
-                          <form action="?src=deleteModel" method="post" style="display: inline;">
+                          <form action="?src=deleteModel&id=<?php // $_GET['id'] ?>" method="post" style="display: inline;">
                             <input type="hidden" name="id"   value="<?php //$model->id;?>">
                             <button href="?src=deleteModel&id=<?php //$model->id;?>" class="btn btn-danger">delete</button>
                           </form>
@@ -238,7 +238,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table Article</h6><span  > <a href="?src=addArticle" class="btn btn-primary"> Ajouter</a></span>
+              <h6>Table Article</h6><span  > <a href="?src=addArticle&id=<?= $_GET['id'] ?>" class="btn btn-primary"> Ajouter</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -289,7 +289,7 @@
                           </div>
                         </a>
                       
-                        <form action="?src=deleteArticle" method="post" style="display: inline;">
+                        <form action="?src=deleteArticle&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$articles->id;?>">
                           <button href="?src=deleteArticle&id=<?=$articles->id;?>" class="btn btn-danger">delete</button>
                         </form>
@@ -318,7 +318,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table Competition</h6> <a href="?src=addCompet" class="btn btn-primary"> Ajouter</a></span>
+              <h6>Table Competition</h6> <a href="?src=addCompet&id=<?= $_GET['id'] ?>" class="btn btn-primary"> Ajouter</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -388,7 +388,7 @@
                               modif
                             </div>
                           </a>
-                          <form action="?src=deleteCompet" method="post" style="display: inline;">
+                          <form action="?src=deleteCompet&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$compet->ID;?>">
                           <button href="?src=deleteCompet&id=<?=$compet->ID;?>" class="btn btn-danger">delete</button>
                         </form>
@@ -423,7 +423,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Table Club</h6> <a href="?src=addPersonne" class="btn btn-primary"> Ajouter</a></span>
+              <h6>Table Club</h6> <a href="?src=addPersonne&id=<?= $_GET['id'] ?>" class="btn btn-primary"> Ajouter</a></span>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -478,7 +478,7 @@
                               modif
                             </div>
                           </a>
-                          <form action="?src=deletePersonne" method="post" style="display: inline;">
+                          <form action="?src=deletePersonne&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                           <input type="hidden" name="id"   value="<?=$club->id;?>">
                           <button href="?src=deletePersonne&id=<?=$club->id;?>" class="btn btn-danger">delete</button>
                         </form>

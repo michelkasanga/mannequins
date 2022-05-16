@@ -1,6 +1,6 @@
 <?php 
 namespace App\Controller;
- 
+
 class LoadController extends Controller
 {
     public function __construct()
@@ -15,6 +15,7 @@ class LoadController extends Controller
         $this->loadClass('Competition');
         $this->loadClass('Club');
         $this->loadClass('Comment_article');
+        $this->loadClass('Auth');
 
 
     }
@@ -210,4 +211,33 @@ class LoadController extends Controller
         $competitions = $this->Competition->all();
         $this->render('pages.competition', compact('competitions'), 'default');
     }
+    public function Admin()
+    {
+        $title = 'Connection';
+        if(isset($_POST['send']))
+        {
+            $name = htmlspecialchars($_POST['username']);
+            $pass = sha1($_POST['userpass']);
+            if(!empty($name) AND !empty($pass))
+            {
+                $resultat = $this->Auth->login($name,$pass);
+                
+                if(count($resultat)==1)
+                { session_start();
+                    foreach($resultat as $result){
+                        $_SESSION['id'] = $result->id;
+                        $_SESSION['name'] = $result->name;
+                        $_SESSION['password'] = $result->password;
+                        header('Location:../public/roxanne.php?src='.$_GET['src'].'&id='.$_SESSION['id']);
+                    }
+                    
+                }else{
+                    return $this->index();
+            }
+            }
+        }
+        $this->render('pages.connect',compact('title'),'connect');
+    }
 }
+
+    

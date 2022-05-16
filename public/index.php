@@ -60,7 +60,9 @@ if(isset($_GET['src']))
     }
     elseif($src === 'admin')
     {
-        require ROOT.'/App/Auth/connect.php';
+        
+        $controller = new LoadController();
+        $controller->Admin();
     }
     elseif($src === 'competition')
     {
