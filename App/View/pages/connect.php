@@ -33,7 +33,7 @@
                       <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Connection</button>
                     </div>
                     <div class="text-center">
-                      <a href="?signUp"  class="btn btn-lg btn-link btn-lg w-100 mt-4 mb-0">Sign Up</button>
+                      <a href="?src=signUp"  class="btn btn-lg btn-link btn-lg w-100 mt-4 mb-0">Sign Up</button>
                     </div>
 
                 </form>

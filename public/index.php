@@ -221,6 +221,9 @@ if(isset($_GET['src']))
     }elseif($src === 'profile'){
         $controller = new ProfileController();
         $controller->profile();
+    }elseif($src === 'signUp'){
+        $controller = new ProfileController();
+        $controller->signUp();
     }
 
 

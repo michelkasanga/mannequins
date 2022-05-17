@@ -16,7 +16,7 @@ class UserController extends AppController
 
         if(!empty($_POST)){
             $auth = new AuthUser(App::getInstance()->getDb());
-            if($auth->login($_POST['username'],$_POST['userpass']))
+            if($auth->login($_POST['email'],$_POST['password']))
             {
             header('Location:?src=admin');
             }else{
@@ -25,6 +25,6 @@ class UserController extends AppController
         }
     
     
-        $this->render('pages.connect',compact('title'),'connect');
+        $this->render('pages.admin.pages.signIn',compact('title'),'admin/default2');
     }
 }

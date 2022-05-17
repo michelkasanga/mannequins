@@ -25,7 +25,7 @@ class AuthUser
     */
     public function login($name,$password)
     {
-        $user = $this->db->request('SELECT * FROM users WHERE username=?',[$name],true);
+        $user = $this->db->request('SELECT * FROM users WHERE mail=?',[$name],true);
          
         if($user)
         {
