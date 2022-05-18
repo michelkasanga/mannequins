@@ -141,7 +141,7 @@ class AdminController extends AppController
                     'content' => $_POST['content'],
                     'date' => date('Y-m-d H:i:s')
                 ]);
-                header('Location:?src=admin');
+                header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
             endif;
         endif;
         $this->render("pages.admin.pages.addNotice",compact("title"),"admin/find2");
@@ -645,7 +645,7 @@ class AdminController extends AppController
                 'title'=>$_POST['title'],
                 'content'=>$_POST['content']
             ]);
-            header('Location:?src=admin');
+            header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
         endif;
         $this->render("pages.admin.pages.editNews",compact('find','title'),"admin/find");
     }
@@ -700,7 +700,7 @@ class AdminController extends AppController
         if(!empty($_POST))
         {
              $this->Notice->delete($_POST['id']);
-             header('Location:?src=admin');
+             header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
         }
     }
     public function deletemanager()

@@ -18,7 +18,7 @@ class UserController extends AppController
             $auth = new AuthUser(App::getInstance()->getDb());
             if($auth->login($_POST['email'],$_POST['password']))
             {
-            header('Location:?src=admin');
+            header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
             }else{
             header('Location:?src=home');
             }
@@ -26,5 +26,13 @@ class UserController extends AppController
     
     
         $this->render('pages.admin.pages.signIn',compact('title'),'admin/default2');
+    }
+
+    public function LogOut()
+    {
+        $_SESSION['auth'];
+         session_destroy();
+         header('Location:?src=login');
+         
     }
 }

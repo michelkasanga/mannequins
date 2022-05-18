@@ -10,12 +10,53 @@ class ProfileController extends AppController
     {
         parent::__construct();
         $this->loadClass('Auth');
+        $this->loadClass('UsersPicture');
+        $this->loadClass('File');
         
     }
     public function profile()
     {
         $user = $this->Auth->find($_SESSION['auth']);
-        $this->render("pages.admin.pages.profile",compact('user'),"admin/default");
+        $userspicture = $this->UsersPicture->findPicture($user->id);
+        $this->render("pages.admin.pages.profile",compact('user','userspicture'),"admin/default");
+    }
+    public function changeProfilePicture()
+    {
+        $users = $this->Auth->find($_SESSION['auth']);
+        $picture = $this->File->upload('picture','../App/Photo/UsersPicture/');
+        $id = $users->id;
+            if(isset($picture)):
+                
+                $this->UsersPicture->create([
+                    
+                    'id_user' =>$id,
+                    'picture' =>"$picture"
+                        
+                ]);
+                header('Location:?src=profile');
+            endif;
+    
+    }
+    public function setInformationUser()
+    {
+        $users = $this->Auth->find($_SESSION['auth']);
+        $id = $users->id;
+    
+        if(isset($_POST))
+        {
+            $this->Auth->update($id,[
+                'firstname' => $_POST['firstname'],
+                'secondname' => $_POST['secondname'],
+                'resposability' => $_POST['resposability'],
+                'adress' => $_POST['adress'],
+                'city' => $_POST['city'],
+                'country' => $_POST['country'],
+                'postalCode' => $_POST['postalCode']
+            ]);
+            header('Location:?src=profile');
+        }
+        
+        
     }
     public function signUp()
     {
@@ -35,34 +76,34 @@ class ProfileController extends AppController
                 {
                     if(strlen($_POST['password'])>5)
                     {
-                            if(filter_var($mail,FILTER_VALIDATE_EMAIL))
+                        if(filter_var($mail,FILTER_VALIDATE_EMAIL))
+                        {
+                            $email = $this->Auth->findMail($mail);
+                            if(count($email)==0)
                             {
-                                $email = $this->Auth->findMail($mail);
-                                if(count($email)==0)
+                                if($mdp === $mdp2)
                                 {
-                                    if($mdp === $mdp2)
+                                    $res = $this->Auth->create([
+                                        'username' => $username,
+                                        'mail' => $mail,
+                                        'password' => $mdp
+                                        ]);
+                                        $auth = new AuthUser(App::getInstance()->getDb());
+                                    if($auth->login($_POST['email'],$_POST['password']))
                                     {
-                                        $res = $this->Auth->create([
-                                            'username' => $username,
-                                            'mail' => $mail,
-                                            'password' => $mdp
-                                            ]);
-                                            $auth = new AuthUser(App::getInstance()->getDb());
-                                        if($auth->login($_POST['email'],$_POST['password']))
-                                        {
-                                        header('Location:?src=admin');
-                                        }else{
-                                        header('Location:?src=home');
-                                        }
+                                    header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
                                     }else{
-                                        $message = 'les mots de passe ne correspondent';
+                                    header('Location:?src=home');
                                     }
                                 }else{
-                                    $message = 'Adress mail deja utiliser';
+                                    $message = 'les mots de passe ne correspondent';
                                 }
                             }else{
-                                $message = 'votre adress mail n\'est pas valide';
+                                $message = 'Adress mail deja utiliser';
                             }
+                        }else{
+                            $message = 'votre adress mail n\'est pas valide';
+                        }
                         
                     }else{
                         $message = 'mot de passe est tres cours';

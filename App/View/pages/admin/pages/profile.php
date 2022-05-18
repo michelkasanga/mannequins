@@ -1,20 +1,23 @@
-
+<?php $title = 'profile';?>
     <!-- End Navbar -->
     <div class="card shadow-lg mx-4 card-profile-bottom">
       <div class="card-body p-3">
         <div class="row gx-4">
-          <div class="col-auto">
-            <div class="avatar avatar-xl position-relative">
-              <img src="../assets/img/team-1.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+          <?php foreach($userspicture as $picture):?>
+            <div class="col-auto">
+              <div class="avatar avatar-xl position-relative  navbar-brand m-0" >
+              
+                <img src="../App/Photo/UsersPicture/<?= $picture->picture;?>" alt="profile_image" class=" navbar-brand-img w-80 h-100 border-radius-lg shadow-sm" style="width: 100%; height:100%;">
+              </div>
             </div>
-          </div>
+          <?php endforeach;?>
           <div class="col-auto my-auto">
             <div class="h-100">
               <h5 class="mb-1">
               <?= $user->username;?>
               </h5>
               <p class="mb-0 font-weight-bold text-sm">
-                Public Relations
+              <?= $user->resposability;?>
               </p>
             </div>
           </div>
@@ -48,38 +51,47 @@
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-md-8">
+
+        <form method="post" action="?src=setInformationUser" enctype="multipart/form-data"  role="form">
           <div class="card">
             <div class="card-header pb-0">
               <div class="d-flex align-items-center">
                 <p class="mb-0">Edit Profile</p>
-                <button class="btn btn-primary btn-sm ms-auto">Settings</button>
+                <button href="?src=setInformationUser&id=<?= $user->id;?>" type="submit" class="btn btn-primary btn-sm ms-auto">Envoyer</button>
               </div>
             </div>
             <div class="card-body">
               <p class="text-uppercase text-sm">User Information</p>
               <div class="row">
+                
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Username</label>
-                    <input class="form-control" type="text" value="lucky.jesse">
+                    <input class="form-control"  type="" placeholder="<?= $user->username;?>">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Email address</label>
-                    <input class="form-control" type="email" value="jesse@example.com">
+                    <input class="form-control" type="" placeholder="  <?= $user->mail;?>">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">First name</label>
-                    <input class="form-control" type="text" value="Jesse">
+                    <input class="form-control" name="firstname" type="text" value="<?= $user->firstname;?>">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Last name</label>
-                    <input class="form-control" type="text" value="Lucky">
+                    <input class="form-control" name="secondname" type="text" value="<?= $user->secondname;?>">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="example-text-input" class="form-control-label">Responsability</label>
+                    <input class="form-control" name="resposability" type="text" value="<?= $user->resposability;?>">
                   </div>
                 </div>
               </div>
@@ -88,41 +100,62 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">Address</label>
-                    <input class="form-control" type="text" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                    <label for="example-text-input" class="form-control-label">Adress</label>
+                    <input class="form-control" name="adress" type="text" value="<?= $user->adress;?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">City</label>
-                    <input class="form-control" type="text" value="New York">
+                    <input class="form-control" name="city" type="text" value="<?= $user->city;?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Country</label>
-                    <input class="form-control" type="text" value="United States">
+                    <input class="form-control" name="country" type="text" value="<?= $user->country;?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Postal code</label>
-                    <input class="form-control" type="text" value="437300">
+                    <input class="form-control" name="postalCode" type="text" value="<?= $user->postalCode;?>">
                   </div>
                 </div>
               </div>
+        </form>
               <hr class="horizontal dark">
-              <p class="text-uppercase text-sm">About me</p>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="example-text-input" class="form-control-label">About me</label>
-                    <input class="form-control" type="text" value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
+
+
+              <p class="text-uppercase text-sm">photo</p>
+              <div class="d-flex align-items-center">
+                  
+                  </div>
+
+              <form method="post" action="?src=changeProfilePicture" enctype="multipart/form-data"  role="form">
+                <div class="row">
+                  <div class="card-header pb-0 m-0">
+                    <div class="d-flex align-items-center m-0">
+                    <p class="text-uppercase text-sm mb-0 m-0">Edit Photo Profile</p>
+                      <button  href="?src=changeProfilePicture&id=<?= $user->id;?>" type="submit" class="btn btn-primary btn-sm ms-auto">Envoyer</button>
+                    
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="form-group">
+                      <label for="example-text-input" class="form-control-label">Choisir la photo</label>
+                      <input class="form-control" name="picture" type="file" value="" >
+                    </div>
                   </div>
                 </div>
-              </div>
+              </form>
+
+
             </div>
           </div>
+      
+
+
         </div>
         <div class="col-md-4">
           <div class="card card-profile">

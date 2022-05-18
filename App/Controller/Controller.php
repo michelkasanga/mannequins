@@ -21,7 +21,6 @@ class Controller
     public function forbidden()
     {
         header('HTTP/1.0 403 Forbidden');
-        var_dump(sha1('draya'));
         die('Acces interdit');
 
     }

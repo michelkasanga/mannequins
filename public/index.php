@@ -76,7 +76,7 @@ if(isset($_GET['src']))
 
 
 
-    elseif ($src === 'admin' ) {
+    elseif ($src === 'e2bdf092171e62ed1823a26b139c920be4aa8ad0' ) {
         $controller = new AdminController();
         $controller->index();
     } elseif ($src === 'addNotice') {
@@ -224,6 +224,15 @@ if(isset($_GET['src']))
     }elseif($src === 'signUp'){
         $controller = new ProfileController();
         $controller->signUp();
+    }elseif($src==='logOut'){
+        $controller = new UserController();
+        $controller->logOut();
+    }elseif($src==='changeProfilePicture'){
+        $controller = new ProfileController();
+        $controller->changeProfilePicture();
+    }elseif($src==='setInformationUser'){
+        $controller = new ProfileController();
+        $controller->setInformationUser();
     }
 
 
