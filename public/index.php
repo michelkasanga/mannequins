@@ -72,6 +72,18 @@ if(isset($_GET['src']))
         $controller = new LoadController();
         $controller->Competition();
     }
+    elseif($src === '5854a82bc4373373f08e11b4ba52e373bc3ccdc7')
+    {
+        $controller = new LoadController();
+        $controller->getForbidden();
+    }
+    elseif($src === 'a83d4bf9070ae6eb080b4cc7b2703e17a51172ae')
+    {
+        $controller = new LoadController();
+        $controller->getNotFound();
+    }
+
+
 
 
 
@@ -233,6 +245,9 @@ if(isset($_GET['src']))
     }elseif($src==='setInformationUser'){
         $controller = new ProfileController();
         $controller->setInformationUser();
+    }elseif($src==='setProfile'){
+        $controller = new ProfileController();
+        $controller->setProfile();
     }
 
 

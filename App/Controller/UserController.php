@@ -25,7 +25,7 @@ class UserController extends AppController
         }
     
     
-        $this->render('pages.admin.pages.signIn',compact('title'),'admin/default2');
+        $this->default2('pages.admin.pages.signIn',compact('title'));
     }
 
     public function LogOut()

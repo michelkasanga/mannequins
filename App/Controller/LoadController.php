@@ -29,13 +29,13 @@ class LoadController extends AppController
         $competition = $this->Competition->lastCompetition();
         $clubs = $this->Club->all();
         
-        $this->render('pages.acceuil',compact('notice','news','model','about','article','competition','clubs'),'default');
+        $this->default('pages.acceuil',compact('notice','news','model','about','article','competition','clubs'));
         
     }
     public function oneNotice()
     {
         $notice = $this->Notice->find($_GET['id']);
-        $this->render('pages.find.findNotice',compact('notice'),'one');
+        $this->one('pages.find.findNotice',compact('notice'));
     }
     public function oneNew()
     {
@@ -105,7 +105,7 @@ class LoadController extends AppController
                 }
             endforeach;
             
-        $this->render('pages.find.findNews',compact('onenew','time','title','nom','type','commentaire'),'one');
+        $this->one('pages.find.findNews',compact('onenew','time','title','nom','type','commentaire'));
 
     }
 
@@ -177,7 +177,7 @@ class LoadController extends AppController
                 }
             endforeach;
             
-        $this->render('pages.find.findArticle',compact('findArticle','time','title','nom','type','commentaire'),'one');
+        $this->one('pages.find.findArticle',compact('findArticle','time','title','nom','type','commentaire'));
 
     }
     public function oneModel()
@@ -186,30 +186,42 @@ class LoadController extends AppController
         $time = \App\Model\php\Time::timing($findModel->date,$findModel->time);
         $title =$findModel->title;
         
-        $this->render('pages.find.findModel',compact('findModel','time','title'),'one');
+        $this->one('pages.find.findModel',compact('findModel','time','title'));
 
     }
     public function findCompetition()
     {
         $find = $this->Competition->find($_GET['id']);
         $annees =   (int)date('Y') - (int)$find->year_b;
-        $this->render('pages.find.findCompetition',compact('find','annees'),'one');
+        $this->one('pages.find.findCompetition',compact('find','annees'));
     }
     public function About()
     {
         $abouts = $this->About->all();
-        $this->render('pages.about',compact('abouts'),'default');
+        $this->default('pages.about',compact('abouts'));
 
     }
     public function Articles()
     {
         $articles = $this->Article->all();
-        $this->render('pages.articles',compact('articles'),'default');
+        $this->default('pages.articles',compact('articles'));
     }
     public function Competition()
     {
         $competitions = $this->Competition->all();
-        $this->render('pages.competition', compact('competitions'), 'default');
+        $this->default('pages.competition', compact('competitions'));
+    }
+    public function getNotFound()
+    {
+        $number = 404;
+        $message = 'Not Found';
+        $this->default2('pages.admin.pages.error', compact('number','message'));
+    }
+    public function getForbidden()
+    {
+        $number = 500;
+        $message ='ERROR SERVER';
+        $this->default2('pages.admin.pages.error', compact('number','message'));
     }
 
 }

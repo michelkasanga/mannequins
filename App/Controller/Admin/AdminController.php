@@ -46,7 +46,7 @@ class AdminController extends AppController
         $article_count = count($article);
         $pourcentage_article = ($article_count*100)/5000;
 
-        $this->render("pages.admin.pages.index",
+        $this->defaultAdmin("pages.admin.pages.index",
         compact("notice_count",
                 "notice_all",
                 "pourcentage_notice",
@@ -58,8 +58,7 @@ class AdminController extends AppController
                 "pourcentage_news",
                 "news",
                 "model",
-                "about"),
-                "admin/default");
+                "about"));
     }
     public function tables()
     {
@@ -74,12 +73,8 @@ class AdminController extends AppController
 
         
         
-        $this->render("pages.admin.pages.tables",compact('news','models','category','article','competition','clubs','services'),"admin/default");
+        $this->defaultAdmin("pages.admin.pages.tables",compact('news','models','category','article','competition','clubs','services'));
     }
-    
-
-
-
     public function AddAbout()
     {
         $title = 'parlez a propos de vous';
@@ -104,7 +99,7 @@ class AdminController extends AppController
                 header('Location:?src=factory');
             endif;
         endif;
-        $this->render("pages.admin.pages.addAbout",compact('title','lien'),"admin/find");
+        $this->find("pages.admin.pages.addAbout",compact('title','lien'));
     }
 
     public function AddService()
@@ -128,7 +123,7 @@ class AdminController extends AppController
             endif;
         endif;
 
-        $this->render("pages.admin.pages.addService",compact('title'),"admin/find");
+        $this->find("pages.admin.pages.addService",compact('title'));
     }
 
     public function AddNotice()
@@ -144,7 +139,7 @@ class AdminController extends AppController
                 header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
             endif;
         endif;
-        $this->render("pages.admin.pages.addNotice",compact("title"),"admin/find2");
+        $this->find2("pages.admin.pages.addNotice",compact("title"));
     }
     
     public function AddNews()
@@ -165,7 +160,7 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.addNews",compact('title'),"admin/find2");
+        $this->find2("pages.admin.pages.addNews",compact('title'));
     }
     public function AddPersonne()
     {
@@ -187,7 +182,7 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.addPersonne",compact('title'),"admin/find");
+        $this->find("pages.admin.pages.addPersonne",compact('title'));
     }
     public function AddArticle()
     {
@@ -207,7 +202,7 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.addNews",compact('title'),"admin/find2");
+        $this->find2("pages.admin.pages.addNews",compact('title'));
     }
 
     public function AddModel()
@@ -229,7 +224,7 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.addModel",compact('category'),"admin/find2");
+        $this->find2("pages.admin.pages.addModel",compact('category'));
     }
 
     public function AddCompetition()
@@ -263,7 +258,7 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.addCompet",compact('level','title','manager'),"admin/find2");
+        $this->find2("pages.admin.pages.addCompet",compact('level','title','manager'));
     }
 
     public function addCategory_model()
@@ -280,7 +275,7 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.addCategory_model",compact("title"),"admin/find2");
+        $this->find2("pages.admin.pages.addCategory_model",compact("title"));
     }
 
     public function addManager()
@@ -303,7 +298,7 @@ class AdminController extends AppController
                 header('Location:?src=factory');
             endif;
         endif;
-        $this->render("pages.admin.pages.addManager",compact('title'),"admin/find2");
+        $this->find2("pages.admin.pages.addManager",compact('title'));
     }
 
     public function EditAboutCompetence()
@@ -323,7 +318,7 @@ class AdminController extends AppController
                 header('Location:?src=factory');
             endif;
         endif;
-        $this->render("pages.admin.pages.editAboutCompetence",compact('title','lien','find'),"admin/find");
+        $this->find("pages.admin.pages.editAboutCompetence",compact('title','lien','find'));
     }
     public function EditAboutPictures()
     {
@@ -332,7 +327,7 @@ class AdminController extends AppController
         $find = $this->About->find($_GET['id']);
         
         
-        $this->render("pages.admin.pages.views",compact('title','find'),"admin/find");
+        $this->find("pages.admin.pages.views",compact('title','find'));
     }
     public function EditAboutPicture1()
     {
@@ -355,7 +350,7 @@ class AdminController extends AppController
                 header('Location:?src=editpictures&id='.$_GET['id']);
             endif;
     
-        $this->render("pages.admin.pages.editPicture1",compact('title','find'),"admin/find");
+        $this->find("pages.admin.pages.editPicture1",compact('title','find'));
     }
     public function EditAboutPicture2()
     {
@@ -378,7 +373,7 @@ class AdminController extends AppController
                 header('Location:?src=editpictures&id='.$_GET['id']);
             endif;
     
-        $this->render("pages.admin.pages.editPicture2",compact('title','find'),"admin/find");
+        $this->find("pages.admin.pages.editPicture2",compact('title','find'));
     }
     public function EditAboutPicture3()
     {
@@ -401,7 +396,7 @@ class AdminController extends AppController
                 header('Location:?src=editpictures&id='.$_GET['id']);
             endif;
     
-        $this->render("pages.admin.pages.editPicture3",compact('title','find'),"admin/find");
+        $this->find("pages.admin.pages.editPicture3",compact('title','find'));
     }
     
     public function EditAboutContent()
@@ -421,7 +416,7 @@ class AdminController extends AppController
                 header('Location:?src=factory');
             endif;
         endif;
-        $this->render("pages.admin.pages.editAboutContent",compact('title','lien','find'),"admin/find");
+        $this->find("pages.admin.pages.editAboutContent",compact('title','lien','find'));
     }
     public function editPersonne()
     {
@@ -445,7 +440,7 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.editPersonne",compact('title','find','type','reset','titre'),"admin/find");
+        $this->find("pages.admin.pages.editPersonne",compact('title','find','type','reset','titre'));
     }
     public function editPersonneContent()
     {
@@ -469,7 +464,7 @@ class AdminController extends AppController
                 header('Location:?src=personne&id='.$_GET['id']);
             endif;
         endif;
-        $this->render("pages.admin.pages.editPersonne",compact('title','find','type','reset','titre'),"admin/find");
+        $this->find("pages.admin.pages.editPersonne",compact('title','find','type','reset','titre'));
     }
     public function editPersonnePicture()
     {
@@ -491,7 +486,7 @@ class AdminController extends AppController
                 header('Location:?src=personne&id='.$_GET['id']);
             endif;
     
-        $this->render("pages.admin.pages.editPicture",compact('title','find','reset'),"admin/find");
+        $this->find("pages.admin.pages.editPicture",compact('title','find','reset'));
     }
     public function editPersonneTitle()
     {
@@ -514,7 +509,7 @@ class AdminController extends AppController
             endif;
         endif;
     
-        $this->render("pages.admin.pages.editTitle",compact('title','find','reset'),"admin/find");
+        $this->find("pages.admin.pages.editTitle",compact('title','find','reset'));
     }
 
 
@@ -538,7 +533,7 @@ class AdminController extends AppController
                 header('Location:?src=factory');
             endif;
         endif;
-        $this->render("pages.admin.pages.editManager",compact('find'),"admin/find2");
+        $this->find2("pages.admin.pages.editManager",compact('find'));
     }
 
     public function EditeManager()
@@ -564,7 +559,7 @@ class AdminController extends AppController
                 header('Location:?src=_c_o_m_p_e_t_i_t_i_o_n_&id='.$fi);
             endif;
         endif;
-        $this->render("pages.admin.pages.editManager",compact('find','lien'),"admin/find2");
+        $this->find2("pages.admin.pages.editManager",compact('find','lien'));
     }
 
     public function editCompet()
@@ -589,10 +584,8 @@ class AdminController extends AppController
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->render("pages.admin.pages.editCompet",compact('level','title','find','manager'),"admin/find2");
+        $this->find2("pages.admin.pages.editCompet",compact('level','title','find','manager'));
     }
-
-
     public function editNews()
     {
         $find = $this->News->find($_GET['id']);
@@ -605,7 +598,7 @@ class AdminController extends AppController
             ]);
             header('Location:?src=tables');
         endif;
-        $this->render("pages.admin.pages.editNews",compact('find','title'),"admin/find");
+        $this->find("pages.admin.pages.editNews",compact('find','title'));
     }
     public function editArticle()
     {
@@ -619,7 +612,7 @@ class AdminController extends AppController
             ]);
             header('Location:?src=tables');
         endif;
-        $this->render("pages.admin.pages.editNews",compact('find','title'),"admin/find2");
+        $this->find2("pages.admin.pages.editNews",compact('find','title'));
     }
     public function editCategory_model()
     {
@@ -632,7 +625,7 @@ class AdminController extends AppController
             ]);
             header('Location:?src=tables');
         endif;
-        $this->render("pages.admin.pages.editCategory_model",compact('find'),"admin/find2");
+        $this->find2("pages.admin.pages.editCategory_model",compact('find'));
     }
 
     public function editNotice()
@@ -647,7 +640,7 @@ class AdminController extends AppController
             ]);
             header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
         endif;
-        $this->render("pages.admin.pages.editNews",compact('find','title'),"admin/find");
+        $this->find("pages.admin.pages.editNews",compact('find','title'));
     }
 
     public function editLevel()
@@ -659,7 +652,7 @@ class AdminController extends AppController
                 header('Location:?src=factory');
             endif;
         endif;
-        $this->render("pages.admin.pages.editLevel",compact('find'),"admin/find2");
+        $this->find2("pages.admin.pages.editLevel",compact('find'));
     }
 
     public function editModel()
@@ -673,7 +666,7 @@ class AdminController extends AppController
             ]);
             header('Location:?src=tables');
         endif;
-        $this->render("pages.admin.pages.editModel",compact('category'),"admin/find");
+        $this->find("pages.admin.pages.editModel",compact('category'));
     }
 
 
@@ -740,35 +733,35 @@ class AdminController extends AppController
     public function noticeFind()
     {
         $findNotice = $this->Notice->find($_GET['id']);
-    $this->render("pages.admin.pages.finds.notice",compact('findNotice'),"admin/find");
+    $this->find("pages.admin.pages.finds.notice",compact('findNotice'));
     }
     public function newsFind()
     {
         $findNews = $this->News->find($_GET['id']);
         $commentaire = $this->Comment->find($_GET['id']);
-    $this->render("pages.admin.pages.finds.news",compact('findNews','commentaire'),"admin/find");
+    $this->find("pages.admin.pages.finds.news",compact('findNews','commentaire'));
     }
     public function modelFind()
     {
         $findModel = $this->Model->find($_GET['id']);
-    $this->render("pages.admin.pages.finds.model",compact('findModel'),"admin/find");
+    $this->find("pages.admin.pages.finds.model",compact('findModel'));
     }
     public function ArticleFind()
     {
         $findArticle = $this->Article->find($_GET['id']);
         $commentaire = $this->Comment_article->find($_GET['id']);
-    $this->render("pages.admin.pages.finds.article",compact('findArticle','commentaire'),"admin/find");
+    $this->find("pages.admin.pages.finds.article",compact('findArticle','commentaire'));
     }
     public function CompetitionFind()
     {
         $find = $this->Competition->find($_GET['id']);
         $annees =   (int)date('Y') - (int)$find->year_b;
-        $this->render('pages.admin.pages.finds.compet',compact('find','annees'),'admin/find');
+        $this->find('pages.admin.pages.finds.compet',compact('find','annees'));
     }
     public function PersonFind()
     {
         $find = $this->Club->find($_GET['id']);
-        $this->render('pages.admin.pages.finds.personne',compact('find'),'admin/find');
+        $this->find('pages.admin.pages.finds.personne',compact('find'));
     }
     public function addPictureModel()
     {
@@ -835,7 +828,7 @@ class AdminController extends AppController
                     header('Location:?src=model&id='.$_GET['id']);
                 }
         }
-        $this->render("pages.admin.pages.update.modelPicture",compact('title'),"admin/find2");
+        $this->find2("pages.admin.pages.update.modelPicture",compact('title'));
     }
     public function addPictureCompetition()
     {
@@ -866,7 +859,7 @@ class AdminController extends AppController
                     header('Location:?src=_c_o_m_p_e_t_i_t_i_o_n_&id='.$_GET['id']);
                 }
         }
-        $this->render("pages.admin.pages.update.competitionPicture",compact('title'),"admin/find2");
+        $this->find2("pages.admin.pages.update.competitionPicture",compact('title'));
     }
 
 
@@ -875,7 +868,7 @@ class AdminController extends AppController
         $manager =  $this->Manager->all();
         $level =  $this->Level_competition->all();
         $abouts = $this->About->all();
-        $this->render("pages.admin.pages.billing",compact('manager','level','abouts'),"admin/default");
+        $this->defaultAdmin("pages.admin.pages.billing",compact('manager','level','abouts'));
     }
     
     

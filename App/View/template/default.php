@@ -261,7 +261,7 @@
                   document.write(new Date().getFullYear())
                 </script>,
                 | direct <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank"> | draya</a>
+                <a href="?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0" style="color: black;" target="_blank"> | |</a>draya
                 | mannequin
               </div>
             </div>
