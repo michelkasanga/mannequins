@@ -211,6 +211,11 @@ class LoadController extends AppController
         $competitions = $this->Competition->all();
         $this->default('pages.competition', compact('competitions'));
     }
+    public function News()
+    {
+        $news = $this->News->all();
+        $this->default('pages.news',compact('news'));
+    }
     public function getNotFound()
     {
         $number = 404;

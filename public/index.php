@@ -72,6 +72,11 @@ if(isset($_GET['src']))
         $controller = new LoadController();
         $controller->Competition();
     }
+    elseif($src === '3c6bdcddc94f64bf77deb306aae490a90a6fc300')
+    {
+        $controller = new LoadController();
+        $controller->News();
+    }
     elseif($src === '5854a82bc4373373f08e11b4ba52e373bc3ccdc7')
     {
         $controller = new LoadController();
