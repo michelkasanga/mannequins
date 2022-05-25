@@ -36,6 +36,7 @@
       
         <link rel="stylesheet" href="../App/View/template/set/css/one.css">
         <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
+        <link rel="stylesheet" href="../public/notice/css/style.css">
       
       
     </head>

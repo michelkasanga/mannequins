@@ -41,7 +41,7 @@
 </div>
 
 
-<?= sha1('news');?>
+<?= sha1('oneNotice');?>
   <!--   Core JS Files   -->
   <script src="../App/View/template/admin/assets/js/core/popper.min.js"></script>
   <script src="../App/View/template/admin/assets/js/core/bootstrap.min.js"></script>

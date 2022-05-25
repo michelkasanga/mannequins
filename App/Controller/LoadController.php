@@ -32,7 +32,7 @@ class LoadController extends AppController
         $this->default('pages.acceuil',compact('notice','news','model','about','article','competition','clubs'));
         
     }
-    public function oneNotice()
+    public function findNotice()
     {
         $notice = $this->Notice->find($_GET['id']);
         $this->one('pages.find.findNotice',compact('notice'));

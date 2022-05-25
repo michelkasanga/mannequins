@@ -18,7 +18,7 @@
                                             <p data-aos="fade-right" data-aos-delay="600"><?= htmlspecialchars(substr($notices->content,0,150).'...'); ?>
                                             </p>
                                          
-                                            <a data-aos="fade-right" data-aos-delay="900" href="index.php?src=pages.one&id=<?=$notices->id;?>" class="btn btn-primary">See
+                                            <a data-aos="fade-right" data-aos-delay="900" href="index.php?src=eadc0b9a6acab4fd42a4f6ea816e8e27e162216e&id=<?=$notices->id;?>" class="btn btn-primary">See
                                                 More</a>
                                       
                                 </div>
@@ -47,7 +47,7 @@
             <div class="cta-content d-xl-flex align-items-center justify-content-around text-center text-xl-center" >    
                 
                 <div class="content" data-aos="fade-right" data-aos-delay="200">
-                    <h2><?= $compet->name_compet;?></h2>
+                    <h2 style="color:white; font-weight:bold;"><?= $compet->name_compet;?></h2>
                     <label >
                         <small><i style="color:<?= $compet->color;?>;"><?= $compet->title;?></i></small>
                         <br>

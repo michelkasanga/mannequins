@@ -21,10 +21,10 @@ if(isset($_GET['src']))
         $controller = new LoadController();
         $controller->index();
     }
-    elseif($src==='pages.one')
+    elseif($src==='eadc0b9a6acab4fd42a4f6ea816e8e27e162216e')
     {
         $controller = new LoadController();
-        $controller->oneNotice();
+        $controller->findNotice();
     }
     elseif($src==='file')
     {
