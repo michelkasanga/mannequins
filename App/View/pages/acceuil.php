@@ -54,7 +54,7 @@
                         <small><h3 style="color:gold;"><?= $compet->stars;?></h3></small>
                     
                     </label>
-                <div style="padding: 5px;" class=" text-center text-lg-center">
+                <div  class=" text-center text-lg-center px-4">
                     <p class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column mx-lg-0 mx-auto "><?= htmlspecialchars(substr($compet->detail,0,190).'...');?></p>
                     
                 </div>
@@ -440,29 +440,34 @@
     </section> 
     <!-- Testimonial and Clients End -->
     <!-- Call To Action 2 Start -->
-    <section class="cta cta2" data-aos="fade-up" data-aos-delay="0">
-        <div class="container">
+<section class="cta " data-aos="fade-up" data-aos-delay="0">
+        <div class="container px-0 py-4" >
         <?php foreach($competition as $compet):?>
-            <div class="cta-content d-xl-flex align-items-center justify-content-around text-center text-xl-left">
+            <div class="cta-content d-xl-flex align-items-center justify-content-around text-center text-xl-center" >    
+                
                 <div class="content" data-aos="fade-right" data-aos-delay="200">
-                    <h2><?= $compet->name_compet;?></h2>
+                    <h2 style="color:white; font-weight:bold;"><?= $compet->name_compet;?></h2>
                     <label >
                         <small><i style="color:<?= $compet->color;?>;"><?= $compet->title;?></i></small>
                         <br>
                         <small><h3 style="color:gold;"><?= $compet->stars;?></h3></small>
                     
-            </label>
-                
-                    <p><?= htmlspecialchars(substr($compet->detail,0,190).'...');?></p>
+                    </label>
+                <div  class=" text-center text-lg-center px-4">
+                    <p class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column mx-lg-0 mx-auto "><?= htmlspecialchars(substr($compet->detail,0,190).'...');?></p>
+                    
+                </div>
                     
                 </div>
                 <div class="subscribe-btn" data-aos="fade-left" data-aos-delay="400" data-aos-offset="0">
-                    <a href="#" class="btn btn-primary">Voir le detail</a>
+                    <a href="?src=findCompetition&id=<?= $compet->ID;?>" class="btn btn-primary">Voir le detail</a>
                 </div>
+                
             </div>
             <?php endforeach;?>
         </div>
     </section>
+    
     <!-- Call To Action 2 End -->
     
     

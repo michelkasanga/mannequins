@@ -15,7 +15,9 @@
 					<div class="box-testimony animate-box" data-animate-effect="fadeIn">
 						<blockquote>
 							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+							<p>&ldquo;
+                                <?= htmlspecialchars( $notice->content);?>
+                                &rdquo;</p>
 						</blockquote>
 						<p class="author" style="font-size:12px; text-align:center;"><?=  date_format(date_create($notice->date),'d-m-Y  H:i');?></p>
 					</div>
