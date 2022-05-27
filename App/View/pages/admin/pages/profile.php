@@ -1,4 +1,4 @@
-<?php $title = 'profile';?>
+<?php $title = 'Profile';?>
     <!-- End Navbar -->
     <div class="card shadow-lg mx-4 card-profile-bottom">
       <div class="card-body p-3">

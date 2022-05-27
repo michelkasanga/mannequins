@@ -65,7 +65,7 @@
               <form method="post" action="" enctype="multipart/form-data"  role="form">
                 
                 <div class="mb-3">
-                  <input type="email"  name="email"  class="form-control" placeholder="Email" aria-label="Email">
+                  <input type="text"  name="email"  class="form-control" placeholder="Email or user name" aria-label="Email">
                 </div>
                 <div class="mb-3">
                   <input type="password"  name="password"  class="form-control" placeholder="Mot de passe" aria-label="Password">
