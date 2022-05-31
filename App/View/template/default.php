@@ -45,7 +45,7 @@
 
     <link rel="stylesheet" href="../App/View/template/set/post/css/cards.css">
   <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css">
-
+  <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="../App/View/template/set/css/style.css">
     <!-- Responsive Stylesheet -->
@@ -102,7 +102,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link  font-weight-bold" href="?src=competition">
-            <div class="icon icon-magic icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" style="color: orangered;">
+            <div class="icon icon-man-woman icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" style="color: orangered;">
               <i class=" text-warning text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1" style="color:black;">Competition</span>
@@ -110,7 +110,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link  font-weight-bold" href="?src=3c6bdcddc94f64bf77deb306aae490a90a6fc300">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" style="color: orangered;">
+            <div class="icon icon-star-half icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" style="color: orangered;">
               <i class=" text-warning text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1" style="color:black;">News</span>
@@ -118,7 +118,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link  font-weight-bold" href="?src=a9d24446cc1e471bf68005f34aa199e18f46287f">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" style="color: orangered;">
+            <div class="icon icon-profile icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center" style="color: orangered;">
               <i class=" text-warning text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1" style="color:black;">Articles</span>

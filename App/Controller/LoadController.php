@@ -40,70 +40,71 @@ class LoadController extends AppController
     public function oneNew()
     {
         $onenew = $this->News->find($_GET['id']);
-        $time = \App\Model\php\Time::timing($onenew->date,$onenew->time);
-        
-        $title =$onenew->title;        
-        $addr_ip = $_SERVER['REMOTE_ADDR'];
-        $time_comment = time();
-        $id = $onenew->id;
-        $aa=$this->Comment->find_ip($addr_ip);
-        $commentaire = $this->Comment->find($_GET['id']);
-        
-        $type='';
-        $nom = '';
-        $msg = '';
+        if ($onenew) {
+            $time = \App\Model\php\Time::timing($onenew->date, $onenew->time);
+            
+            $title =$onenew->title;
+            $addr_ip = $_SERVER['REMOTE_ADDR'];
+            $time_comment = time();
+            $id = $onenew->id;
+            $aa=$this->Comment->find_ip($addr_ip);
+            $commentaire = $this->Comment->find($_GET['id']);
+            
+            $type='';
+            $nom = '';
+            $msg = '';
 
-        foreach($aa as  $a):
-            $ip_find =$a->address_ip;
+            foreach ($aa as  $a):
+                $ip_find =$a->address_ip;
             $name = $a->name;
             $comment = $a->comment;
-        endforeach;
-        if(count($aa)== 0)
-        {
-            $type = 'text';
-            $nom = " votre nom et votre commentaire";
-            if(!empty($_POST['name']) AND !empty($_POST['comment'])):
-                if(isset($_POST['name']) AND isset($_POST['comment'])):
-                    $this->Comment->create([
-                        'address_ip' => "$addr_ip",
-                        'name' => $_POST['name'],
-                        'comment' => $_POST['comment'],
-                        'news_id' => "$id",
-                        'date' => date('Y-m-d H:i:s'),
-                        'time'=>"$time_comment"
-                        ]);  
-                        header('Location:?src=pages.oneNew&id='.$onenew->id);
-                endif;
-            endif;
-          
-            
-        }else{    
-            $type='hidden';
-            $nom = " votre commentaire $name";
-        
-
-        
-        if(!empty($_POST['comment'])):
-            if(isset($_POST['comment'])):
-                $comment =  $_POST['comment'];
-                $this->Comment->create([
-                    "address_ip" => "$ip_find",
-                    "name" => "$name",
-                    "comment" =>"$comment",
-                    "news_id "=> "$id",
-                    'date' => date('Y-m-d H:i:s'),
-                    "time"=>"$time_comment"
-                    ]);
-                    header('Location:?src=pages.oneNew&id='.$onenew->id);
-            endif;
-        endif;
-        
-            }
-            foreach($commentaire as  $a):
-                if(strlen($a->comment) === NULL){
-                    $this->Comment->delete($_GET['id']);
-                }
             endforeach;
+            if (count($aa)== 0) {
+                $type = 'text';
+                $nom = " votre nom et votre commentaire";
+                if (!empty($_POST['name']) and !empty($_POST['comment'])):
+                    if (isset($_POST['name']) and isset($_POST['comment'])):
+                        $this->Comment->create([
+                            'address_ip' => "$addr_ip",
+                            'name' => $_POST['name'],
+                            'comment' => $_POST['comment'],
+                            'news_id' => "$id",
+                            'date' => date('Y-m-d H:i:s'),
+                            'time'=>"$time_comment"
+                            ]);
+                header('Location:?src=pages.oneNew&id='.$onenew->id);
+                endif;
+                endif;
+            } else {
+                $type='hidden';
+                $nom = " votre commentaire $name";
+            
+
+            
+                if (!empty($_POST['comment'])):
+                if (isset($_POST['comment'])):
+                    $comment =  $_POST['comment'];
+                $this->Comment->create([
+                        "address_ip" => "$ip_find",
+                        "name" => "$name",
+                        "comment" =>"$comment",
+                        "news_id "=> "$id",
+                        'date' => date('Y-m-d H:i:s'),
+                        "time"=>"$time_comment"
+                        ]);
+                header('Location:?src=pages.oneNew&id='.$onenew->id);
+                endif;
+                endif;
+            }
+            foreach ($commentaire as  $a):
+                    if (strlen($a->comment) === null) {
+                        $this->Comment->delete($_GET['id']);
+                    }
+            endforeach;
+        }
+        else{
+            header('Location:?src=a83d4bf9070ae6eb080b4cc7b2703e17a51172ae');
+        }
             
         $this->one('pages.find.findNews',compact('onenew','time','title','nom','type','commentaire'));
 

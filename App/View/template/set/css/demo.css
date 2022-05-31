@@ -1,4 +1,4 @@
-body {
+/* body {
 	padding: 0;
 	margin: 0;
 	font-family: sans-serif;
@@ -20,8 +20,8 @@ a {
 }
 a:hover, a:focus {
 	box-shadow: 0 1px #e74c3c;
-}
-.bshadow0, input {
+} */
+/* .bshadow0, input {
 	box-shadow: inset 0 -2px #e7e7e7;
 }
 input:hover {
@@ -43,7 +43,7 @@ input {
 input:focus {
 	outline: none;
 	box-shadow: inset 0 -2px #449fdb;
-}
+} */
 .glyph {
 	font-size: 16px;
 	width: 15em;

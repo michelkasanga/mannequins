@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="../App/View/template/set/css/one.css">
   <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
 
-
+<link rel="stylesheet" type="text/css" href="../public/Font/style.css">
   <!-- CSS Files -->
   
       

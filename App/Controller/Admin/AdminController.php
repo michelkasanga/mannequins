@@ -871,6 +871,17 @@ class AdminController extends AppController
     
     public function icons()
     {
-        
+        $icon = $this->Icons->all();
+        if(!empty($_POST)){
+            if(isset($_POST)){
+                $this->Icons->create([
+                    'title' => $_POST['icon'],
+                    'name' => $_POST['name']
+                ]);
+                header('Location:?src=iconInsert');
+            }
+        }
+
+        $this->find("pages.admin.pages.icon",compact('icon'));
     }
 }

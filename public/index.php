@@ -253,6 +253,12 @@ if(isset($_GET['src']))
     }elseif($src==='setProfile'){
         $controller = new ProfileController();
         $controller->setProfile();
+    }elseif($src === 'iconInsert'){
+        $controller = new AdminController();
+        $controller->icons();
     }
 
 
+else{
+    header('Location:?src=a83d4bf9070ae6eb080b4cc7b2703e17a51172ae');
+}
