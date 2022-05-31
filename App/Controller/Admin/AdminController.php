@@ -25,6 +25,7 @@ class AdminController extends AppController
         $this->loadClass('Comment_article');
         $this->loadClass('Auth');
         $this->loadClass('Service');
+        $this->loadClass('Icons');
     }
     public function index(){
     
@@ -512,7 +513,6 @@ class AdminController extends AppController
         $this->find("pages.admin.pages.editTitle",compact('title','find','reset'));
     }
 
-
     public function editManager()
     {
         $find = $this->Manager->find($_GET['id']);
@@ -729,28 +729,27 @@ class AdminController extends AppController
         }
     }
 
-
     public function noticeFind()
     {
         $findNotice = $this->Notice->find($_GET['id']);
-    $this->find("pages.admin.pages.finds.notice",compact('findNotice'));
+        $this->find("pages.admin.pages.finds.notice",compact('findNotice'));
     }
     public function newsFind()
     {
         $findNews = $this->News->find($_GET['id']);
         $commentaire = $this->Comment->find($_GET['id']);
-    $this->find("pages.admin.pages.finds.news",compact('findNews','commentaire'));
+        $this->find("pages.admin.pages.finds.news",compact('findNews','commentaire'));
     }
     public function modelFind()
     {
         $findModel = $this->Model->find($_GET['id']);
-    $this->find("pages.admin.pages.finds.model",compact('findModel'));
+        $this->find("pages.admin.pages.finds.model",compact('findModel'));
     }
     public function ArticleFind()
     {
         $findArticle = $this->Article->find($_GET['id']);
         $commentaire = $this->Comment_article->find($_GET['id']);
-    $this->find("pages.admin.pages.finds.article",compact('findArticle','commentaire'));
+        $this->find("pages.admin.pages.finds.article",compact('findArticle','commentaire'));
     }
     public function CompetitionFind()
     {
@@ -862,7 +861,6 @@ class AdminController extends AppController
         $this->find2("pages.admin.pages.update.competitionPicture",compact('title'));
     }
 
-
     public function factory()
     {
         $manager =  $this->Manager->all();
@@ -871,5 +869,8 @@ class AdminController extends AppController
         $this->defaultAdmin("pages.admin.pages.billing",compact('manager','level','abouts'));
     }
     
-    
+    public function icons()
+    {
+        
+    }
 }

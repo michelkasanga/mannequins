@@ -28,7 +28,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
   <link id="pagestyle" href="../App/View/template/admin/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
   <link id="pagestyle" href="../App/View/template/admin/assets/css/find.css" rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
+  
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
   <!-- CSS Files -->
@@ -114,9 +114,10 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
       </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
+    <?php foreach(App::getTable('UsersPicture')->findPicture($user->id) as $picture):?>
       <div class="card card-plain shadow-none" id="sidenavCard">
-        <img class="w-50 mx-auto" src="..\App\Photo\ServicePicture0af99e5f68aeedbe66186ea53ff80dcd.jpg" alt="sidebar_illustration">
-        
+        <img class="w-50 mx-auto" src="../App/Photo/UsersPicture/<?= $picture->picture;?>" alt="sidebar_illustration">
+        <?php endforeach;?>
       </div>
       </div> 
   </aside>
