@@ -14,7 +14,7 @@
                   <thead>
                     <tr>
                     <th class="align-middle text-center">Id</th>
-                      <th class="align-middle text-left">Photo</th>
+                      <th class="align-middle text-center">Icon</th>
                       <th class="align-middle text-center">Service</th>
                       <th class="align-middle text-center">Date Ajout</th>
                       <th class="align-middle text-center">Action</th>
@@ -26,18 +26,16 @@
                   <?php foreach($services as $service):?>
                     <tr>
                       <td class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold"><?=$service->id;?></span>
+                          <span class="text-secondary text-xs font-weight-bold  "><?=$service->Id;?></span>
                       </td>
-                      <td>
-                        <div class="d-flex px-2 py-1">
+                      <td class="align-middle text-center">
                           <div>
-                            <img src="../App/Photo/ServicePicture/<?=$service->picture;?>" class="avatar avatar-sm me-3" alt="user2">
+                            <span class="text-secondary text-lg font-weight-bold icon <?= $service->icon; ?>">  </span>
                           </div>
-                        </div>
                       </td>
 
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?=$service->title?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?=$service->titre?></span>
                       </td>
 
                       <td class="align-middle text-center">
@@ -47,15 +45,15 @@
 
                       <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold">
-                        <a href="?src=editService&id=<?=$service->id;?>" >
+                        <a href="?src=editService&id=<?=$service->Id;?>" >
                         <div class="btn btn-warning">
                             modif
                           </div>
                         </a>
                       
                         <form action="?src=deleteService" method="post" style="display: inline;">
-                          <input type="hidden" name="id"   value="<?=$service->id;?>">
-                          <button href="?src=deleteService&id=<?=$service->id;?>" class="btn btn-danger">delete</button>
+                          <input type="hidden" name="id"   value="<?=$service->Id;?>">
+                          <button href="?src=deleteService&id=<?=$service->Id;?>" class="btn btn-danger">delete</button>
                         </form>
                       
                         </span>

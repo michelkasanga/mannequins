@@ -106,16 +106,15 @@ class AdminController extends AppController
     public function AddService()
     {
         $title = 'Ajouter un service';
-        $picture = $this->File->upload('picture','../App/Photo/ServicePicture/');
+        $findIcon = $this->Icons->all();
         
-        if(!empty($_POST['title']) AND !empty($_POST['content'])):
-            if(isset($_POST['title']) AND isset($picture) AND isset($_POST['content'])):
+        if(!empty($_POST['title']) AND !empty($_POST['content']) AND !empty($_POST['icon'])):
+            if(isset($_POST['title']) AND isset($_POST['icon']) AND isset($_POST['content'])):
                 
                     $this->Service->create([
                         'title' => $_POST['title'],
-                        'picture' => "$picture",
+                        'idIcon' => $_POST['icon'],
                         'detail' => $_POST['content'],
-                        'contact' => "contact",
                         'date' => date('Y-m-d H:i:s')
 
                     ]);
@@ -124,7 +123,7 @@ class AdminController extends AppController
             endif;
         endif;
 
-        $this->find("pages.admin.pages.addService",compact('title'));
+        $this->find("pages.admin.pages.addService",compact('title','findIcon'));
     }
 
     public function AddNotice()
@@ -400,6 +399,28 @@ class AdminController extends AppController
         $this->find("pages.admin.pages.editPicture3",compact('title','find'));
     }
     
+    public function EditService()
+    {
+        $title = 'editer  ce  Service';
+        $findIcon = $this->Icons->all();
+        $find = $this->Service->find($_GET['id']);
+        if(!empty($_POST['title']) AND !empty($_POST['content']) AND !empty($_POST['icon'])):
+            if(isset($_POST['title']) AND isset($_POST['icon']) AND isset($_POST['content'])):
+                
+                    $this->Service->update($_GET['id'],[
+                        'title' => $_POST['title'],
+                        'idIcon' => $_POST['icon'],
+                        'detail' => $_POST['content'],
+
+                    ]);
+
+                header('Location:?src=tables');
+            endif;
+        endif;
+
+        $this->find("pages.admin.pages.editService",compact('title','findIcon','find'));
+    }
+
     public function EditAboutContent()
     {
         $title = 'Editer vos  contenus';
@@ -709,6 +730,14 @@ class AdminController extends AppController
         if(!empty($_POST))
         {
              $this->Model->delete($_POST['id']);
+             header('Location:?src=tables');
+        }
+    }
+    public function deleteService()
+    {
+        if(!empty($_POST))
+        {
+             $this->Service->delete($_POST['id']);
              header('Location:?src=tables');
         }
     }

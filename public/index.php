@@ -154,7 +154,11 @@ if(isset($_GET['src']))
     } elseif ($src === 'editPicture2') {
         $controller = new AdminController();
         $controller->EditAboutPicture2();
-    } elseif ($src === 'editPicture3') {
+    } elseif ($src === 'editService') {
+        $controller = new AdminController();
+        $controller->EditService();
+    } 
+    elseif ($src === 'editPicture3') {
         $controller = new AdminController();
         $controller->EditAboutPicture3();
     } elseif ($src === 'editNotice') {
@@ -199,7 +203,11 @@ if(isset($_GET['src']))
     } elseif ($src === 'deleteModel') {
         $controller = new AdminController();
         $controller->deleteModel();
-    } elseif ($src === 'deleteCompet') {
+    }elseif ($src === 'deleteService') {
+        $controller = new AdminController();
+        $controller->deleteService();
+    }
+     elseif ($src === 'deleteCompet') {
         $controller = new AdminController();
         $controller->deleteCompet();
     } elseif ($src === 'deletePersonne') {

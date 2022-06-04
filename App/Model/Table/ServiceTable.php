@@ -7,6 +7,14 @@ class ServiceTable extends Table
 
     public function allDESC()
     {
-        return $this->query('SELECT * FROM '.$this->table.' ORDER BY id DESC');
+        return $this->query(" SELECT 
+            s.id Id, s.title titre, s.idIcon, s.detail, s.date, i.id, i.title  icon, i.name
+            FROM service as s 
+            JOIN icons as i 
+            ON s.idIcon = i.id
+            ORDER BY s.id DESC 
+        ");
     }
+
+
 }

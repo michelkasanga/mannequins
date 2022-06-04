@@ -9,21 +9,19 @@
                 <div class="card-header pb-0 text-start">
                   <h4 class="font-weight-bolder"><?=$title;?></h4>
                   <p class="mb-0"></p>
+                  
                 </div>
                 <div class="card-body">
 
-                  <form method="post" action="" enctype="multipart/form-data">
+  <form method="post" action="">
                     <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" name="title" placeholder="Nom Service" required >
+                      <input type="text" class="form-control form-control-lg" name="title" placeholder="Titre de l'annonce" value="<?=htmlspecialchars($find->title);?>" >
                     </div>
-
-                    <!-- <div class="mb-3">
-                      <input type="tel" class="form-control form-control-lg" name="contact" placeholder="contact"  >
-                    </div> -->
-                    
                     <div class="mb-3">
-                        <textarea rows="" cols="" value="contenus" name="content" class="form-control form-control-lg" placeholder="Contenus" >
+                        <textarea rows="" cols="" value="contenus" name="content" class="form-control form-control-lg" placeholder="Contenus" value="<?=$find->detail;?>" >
+                        <?=htmlspecialchars($find->detail);?>
                         </textarea>
+                    
                     </div>
                     <div class="mb-3">
                     categories 
@@ -35,9 +33,8 @@
                     </select>
                     
                     </div>
-                    
                     <div class="text-center">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Ajouter</button>
+                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Modifier</button>
                     </div>
                   </form>
 

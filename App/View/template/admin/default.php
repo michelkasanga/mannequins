@@ -27,8 +27,8 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
   <!-- CSS Files -->
   <link id="pagestyle" href="../App/View/template/admin/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
   <link id="pagestyle" href="../App/View/template/admin/assets/css/find.css" rel="stylesheet" />
-
-  
+  <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
+  <!-- <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css"> -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
   <!-- CSS Files -->
